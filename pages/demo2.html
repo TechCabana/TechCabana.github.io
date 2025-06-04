@@ -10,8 +10,8 @@
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #F5F2F0; /* lightest */
-            color: #211D22; /* darkest */
+            background-color: #FFECD1; /* lightest */
+            color: #001524; /* darkest */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -20,24 +20,24 @@
             text-align: center;
         }
         .dashboard-card {
-            background-color: #FFFFFF;
+            background-color: #FFFFFF; /* Keeping white for contrast */
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 21, 36, 0.1); /* Shadow using darkest */
             padding: 25px;
             max-width: 600px;
             width: 100%;
             margin-bottom: 20px;
-            border: 1px solid rgba(144, 126, 143, 0.3); /* border */
+            border: 1px solid rgba(120, 41, 15, 0.3); /* border using dark-secondary */
         }
         .dashboard-card h3 {
-            color: #715B6E; /* medium-purple */
+            color: #15616D; /* medium-primary */
             font-size: 1.5em;
             margin-bottom: 15px;
         }
         .chart-container {
             width: 100%;
             height: 250px;
-            background-color: #E0D9D5; /* slightly darker lightest */
+            background-color: #F8F4F1; /* A very light shade of lightest for chart background */
             border-radius: 8px;
             margin-bottom: 15px;
             display: flex;
@@ -47,10 +47,10 @@
         }
         .chart-placeholder {
             font-size: 1.2em;
-            color: #907E8F; /* light-purple */
+            color: #FF7D00; /* light-accent */
         }
         .data-point {
-            background-color: #907E8F; /* light-purple */
+            background-color: #FF7D00; /* light-accent */
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -72,7 +72,7 @@
             <span class="data-point">Q3: $130k</span>
         </div>
     </div>
-    <p style="font-size: 0.8em; color: #766374;">(This is a simplified demo of an analytics dashboard with a basic D3.js chart.)</p>
+    <p style="font-size: 0.8em; color: #78290F;">(This is a simplified demo of an analytics dashboard with a basic D3.js chart.)</p>
 
     <script>
         // Sample data for the bar chart
@@ -101,13 +101,13 @@
             .attr("transform", `translate(0,${height})`)
             .call(d3.axisBottom(x))
             .selectAll("text")
-            .style("fill", "#211D22"); // darkest
+            .style("fill", "#001524"); // darkest
 
         // Y axis
         g.append("g")
             .call(d3.axisLeft(y).ticks(5).tickFormat(d => `$${d}k`))
             .selectAll("text")
-            .style("fill", "#211D22"); // darkest
+            .style("fill", "#001524"); // darkest
 
         // Bars
         g.selectAll(".bar")
@@ -118,7 +118,7 @@
             .attr("y", d => y(d))
             .attr("width", x.bandwidth())
             .attr("height", d => height - y(d))
-            .attr("fill", "#715B6E"); // medium-purple
+            .attr("fill", "#15616D"); // medium-primary
     </script>
 </body>
 </html>

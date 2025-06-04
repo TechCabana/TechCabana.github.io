@@ -9,8 +9,8 @@
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #F5F2F0; /* lightest */
-            color: #211D22; /* darkest */
+            background-color: #FFECD1; /* lightest */
+            color: #001524; /* darkest */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -19,13 +19,13 @@
             text-align: center;
         }
         .product-card {
-            background-color: #FFFFFF;
+            background-color: #FFFFFF; /* Keeping white for contrast */
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 21, 36, 0.1); /* Shadow using darkest */
             padding: 25px;
             max-width: 350px;
             margin-bottom: 20px;
-            border: 1px solid rgba(144, 126, 143, 0.3); /* border */
+            border: 1px solid rgba(120, 41, 15, 0.3); /* border using dark-secondary */
         }
         .product-card img {
             max-width: 100%;
@@ -34,23 +34,23 @@
             margin-bottom: 15px;
         }
         .product-card h3 {
-            color: #715B6E; /* medium-purple */
+            color: #15616D; /* medium-primary */
             font-size: 1.5em;
             margin-bottom: 10px;
         }
         .product-card p {
-            color: #766374; /* dark-purple */
+            color: #78290F; /* dark-secondary */
             font-size: 0.95em;
             margin-bottom: 15px;
         }
         .price {
             font-size: 1.8em;
             font-weight: bold;
-            color: #211D22; /* darkest */
+            color: #001524; /* darkest */
             margin-bottom: 20px;
         }
         .add-to-cart-btn {
-            background-color: #907E8F; /* light-purple */
+            background-color: #FF7D00; /* light-accent */
             color: white;
             padding: 12px 25px;
             border: none;
@@ -61,19 +61,19 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .add-to-cart-btn:hover {
-            background-color: #715B6E; /* medium-purple */
+            background-color: #E66A00; /* Slightly darker accent for hover */
             transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <div class="product-card">
-        <img src="https://placehold.co/300x200/907E8F/FFFFFF?text=Product+Image" alt="Sample Product">
+        <img src="https://placehold.co/300x200/15616D/FFFFFF?text=Product+Image" alt="Sample Product">
         <h3>Stylish Gadget X</h3>
         <p>A high-quality, innovative gadget designed to simplify your daily tasks with cutting-edge technology.</p>
         <div class="price">$99.99</div>
         <button class="add-to-cart-btn">Add to Cart</button>
     </div>
-    <p style="font-size: 0.8em; color: #766374;">(This is a simplified demo of an e-commerce product display.)</p>
+    <p style="font-size: 0.8em; color: #78290F;">(This is a simplified demo of an e-commerce product display.)</p>
 </body>
 </html>

@@ -10,8 +10,8 @@
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #F5F2F0; /* lightest */
-            color: #211D22; /* darkest */
+            background-color: #FFECD1; /* lightest */
+            color: #001524; /* darkest */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -20,19 +20,19 @@
             text-align: center;
         }
         .app-screen {
-            background-color: #FFFFFF;
+            background-color: #FFFFFF; /* Keeping white for contrast */
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 21, 36, 0.15); /* Shadow using darkest */
             width: 320px; /* Typical phone width */
             height: 580px; /* Typical phone height */
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: 5px solid #211D22; /* darkest for phone border */
+            border: 5px solid #001524; /* darkest for phone border */
             position: relative;
         }
         .app-header {
-            background-color: #715B6E; /* medium-purple */
+            background-color: #15616D; /* medium-primary */
             color: white;
             padding: 15px;
             font-size: 1.2em;
@@ -51,27 +51,30 @@
             text-align: left;
         }
         .patient-card {
-            background-color: #E0D9D5; /* slightly darker lightest */
+            background-color: #F8F4F1; /* A very light shade of lightest for card background */
             border-radius: 10px;
             padding: 15px;
             margin-bottom: 15px;
-            border: 1px solid rgba(144, 126, 143, 0.3);
+            border: 1px solid rgba(120, 41, 15, 0.3); /* border using dark-secondary */
         }
         .patient-card h4 {
-            color: #715B6E; /* medium-purple */
+            color: #15616D; /* medium-primary */
             margin-bottom: 5px;
         }
         .status-badge {
             display: inline-block;
-            background-color: #907E8F; /* light-purple */
+            background-color: #FF7D00; /* light-accent */
             color: white;
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 0.8em;
             margin-top: 10px;
         }
+        .status-badge[style*="background-color: #766374;"] { /* Specific override for 'Action Needed' */
+            background-color: #78290F !important; /* dark-secondary for 'Action Needed' */
+        }
         .action-button {
-            background-color: #907E8F; /* light-purple */
+            background-color: #FF7D00; /* light-accent */
             color: white;
             padding: 10px 15px;
             border: none;
@@ -82,7 +85,7 @@
             transition: background-color 0.3s ease;
         }
         .action-button:hover {
-            background-color: #715B6E; /* medium-purple */
+            background-color: #E66A00; /* Slightly darker accent for hover */
         }
     </style>
 </head>
@@ -105,10 +108,10 @@
                 <h4>Jane Smith</h4>
                 <p>Last Visit: 2024-05-22</p>
                 <p>Upcoming: Lab Results Review (2025-06-01)</p>
-                <span class="status-badge" style="background-color: #766374;">Action Needed</span>
+                <span class="status-badge" style="background-color: #78290F;">Action Needed</span>
                 <button class="action-button">Review</button>
             </div>
-            <p style="text-align: center; margin-top: 20px; font-size: 0.8em; color: #766374;">(This is a simplified mobile app interface demo.)</p>
+            <p style="text-align: center; margin-top: 20px; font-size: 0.8em; color: #78290F;">(This is a simplified mobile app interface demo.)</p>
         </div>
     </div>
 </body>
