@@ -60,11 +60,19 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: transparent; /* Initially transparent */
+    backdrop-filter: blur(0px); /* Initially no blur */
     z-index: 1000;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    border-bottom: none; /* No border initially */
+}
+
+/* Styles for when the navigation is scrolled */
+nav.scrolled {
+    background: rgba(255, 255, 255, 0.95); /* Opaque background on scroll */
+    backdrop-filter: blur(10px); /* Add blur on scroll */
+    border-bottom: 1px solid var(--border); /* Add border on scroll */
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); /* Add shadow on scroll */
 }
 
 .nav-container {
@@ -79,7 +87,15 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: white; /* Default color for logo on transparent nav */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Text shadow for readability */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* Logo color when navigation is scrolled */
+nav.scrolled .logo {
+    color: var(--primary-color); /* Change to primary color on scroll */
+    text-shadow: none; /* Remove text shadow on scroll */
 }
 
 .nav-links {
@@ -90,10 +106,17 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-primary);
+    color: white; /* Default color for links on transparent nav */
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; /* Smooth transition for color */
     position: relative;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Text shadow for readability */
+}
+
+/* Link color when navigation is scrolled */
+nav.scrolled .nav-links a {
+    color: var(--text-primary); /* Change to primary text color on scroll */
+    text-shadow: none; /* Remove text shadow on scroll */
 }
 
 .nav-links a:hover {
@@ -381,12 +404,10 @@ nav {
 }
 .skill-level.intermediate {
     color: #ffffff;
-    /*color: var(--accent-color); */
     background-color: rgba(255, 125, 0, 0.5);
 }
 .skill-level.advanced {
     color: #ffffff;
-    /*color: var(--primary-color); */
     background-color: rgba(21, 97, 109, 0.5);
 }
 

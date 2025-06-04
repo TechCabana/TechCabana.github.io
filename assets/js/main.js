@@ -12,15 +12,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect: changes background and shadow on scroll
+// Navbar scroll effect: adds/removes 'scrolled' class
 window.addEventListener('scroll', function() {
     const nav = document.querySelector('nav');
-    if (window.scrollY > 50) { // If scrolled more than 50px
-        nav.style.background = 'rgba(255, 255, 255, 0.98)'; // More opaque background
-        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)'; // Add shadow
+    const scrollThreshold = 50; // Distance in pixels to scroll before changing nav style
+
+    if (window.scrollY > scrollThreshold) {
+        nav.classList.add('scrolled'); // Add 'scrolled' class
     } else {
-        nav.style.background = 'rgba(255, 255, 255, 0.95)'; // Original background
-        nav.style.boxShadow = 'none'; // Remove shadow
+        nav.classList.remove('scrolled'); // Remove 'scrolled' class
     }
 });
 
@@ -40,7 +40,7 @@ function showMessageBox(message, type = 'info') {
         z-index: 2000;
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
-        font-family: 'Inter', sans-serif;
+        font-family: 'Lato', sans-serif; /* Using Lato as per your site's font */
         text-align: center;
     `;
     messageBox.textContent = message;
@@ -106,7 +106,7 @@ document.querySelector('.mobile-menu-btn').addEventListener('click', function() 
     navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
 });
 
-// Project card hover effects
+// Project card hover effects (already present and functional)
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-8px) scale(1.02)'; // Lift and slightly scale on hover
