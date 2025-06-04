@@ -122,12 +122,23 @@ nav {
     align-items: center;
     color: white;
     position: relative;
-    /* Updated background image to the uploaded file */
-    background: url('uploaded:rene-bohmer-YeUVDKZWSZ4-unsplash.jpg-6814c47b-0e79-4381-a9c4-0c6aaaab2240') no-repeat center center;
-    background-size: cover;
+    overflow: hidden;
+    /* Background image removed, particles.js will handle background */
+    background: var(--color-darkest); /* Fallback background color */
 }
 
-.hero-overlay { /* New div for the gradient overlay */
+/* Particles.js container styling */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Ensures it's behind the content */
+    background-color: var(--color-darkest); /* Particles background */
+}
+
+.hero-overlay { /* This div is removed from HTML, but keeping style in case it's added back */
     position: absolute;
     top: 0;
     left: 0;
@@ -365,17 +376,17 @@ nav {
 }
 
 .skill-level.beginner {
-    color: #ffffff; 
+    color: #ffffff;
     background-color: rgba(120, 41, 15, 0.5);
 }
 .skill-level.intermediate {
-    color: #ffffff; 
+    color: #ffffff;
     /*color: var(--accent-color); */
     background-color: rgba(255, 125, 0, 0.5);
 }
 .skill-level.advanced {
-    color: #ffffff; 
-    /*color: var(--primary-color); */ 
+    color: #ffffff;
+    /*color: var(--primary-color); */
     background-color: rgba(21, 97, 109, 0.5);
 }
 
