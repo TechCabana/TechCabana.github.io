@@ -50,7 +50,7 @@ h1, h2, h3, h4 {
 
 /* Container for consistent content width */
 .container {
-    max-width: 1200px;
+    max-width: 1600px; /* Increased max-width for larger screens */
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -80,7 +80,7 @@ nav.scrolled {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    max-width: 1200px;
+    max-width: 1600px; /* Also increased max-width for nav container */
     margin: 0 auto;
 }
 
@@ -259,7 +259,7 @@ nav.scrolled .nav-links a {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two columns for skills */
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 100%; /* Ensure it can fill the container */
     margin: 0 auto;
 }
 
@@ -467,15 +467,15 @@ nav.scrolled .nav-links a {
 
 /* Specific background images for each project card */
 .project-card:nth-child(1) .project-image {
-    background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB4MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8fHx8fA%3D%3D');
 }
 
 .project-card:nth-child(2) .project-image {
-    background-image: url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=2011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB4MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=2011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8fHx8fA%3D%3D');
 }
 
 .project-card:nth-child(3) .project-image {
-    background-image: url('https://images.unsplash.com/photo-1576091160550-fd423d562947?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB4MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-image: url('https://images.unsplash.com/photo-1576091160550-fd423d562947?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8fHx8fA%3D%3D');
 }
 
 
@@ -826,6 +826,7 @@ footer {
 
     .mobile-menu-btn {
         display: block; /* Show mobile menu button */
+        color: white; /* Make the icon white on small screens */
     }
 
     .contact-container { /* This rule is now effectively removed due to flex on parent */
