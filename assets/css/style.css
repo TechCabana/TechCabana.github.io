@@ -7,24 +7,24 @@
 
 /* Root CSS variables for new color palette */
 :root {
-    --color-lightest: #F5F2F0; /* Background, surface */
-    --color-light-purple: #907E8F; /* Accent, lighter text */
-    --color-medium-purple: #715B6E; /* Primary color, darker accent */
-    --color-dark-purple: #766374; /* Secondary text, borders */
-    --color-darkest: #211D22; /* Primary text, dark backgrounds */
+    --color-lightest: #FFECD1; /* Background, surface (light cream) */
+    --color-light-accent: #FF7D00; /* Accent, lighter text (bright orange) */
+    --color-medium-primary: #15616D; /* Primary color, darker accent (dark teal/blue-green) */
+    --color-dark-secondary: #78290F; /* Secondary text, borders (dark red/brown) */
+    --color-darkest: #001524; /* Primary text, dark backgrounds (very dark blue/black) */
 
-    --primary-color: var(--color-medium-purple);
+    --primary-color: var(--color-medium-primary);
     --primary-dark: var(--color-darkest);
-    --secondary-color: var(--color-dark-purple);
-    --accent-color: var(--color-light-purple);
+    --secondary-color: var(--color-dark-secondary);
+    --accent-color: var(--color-light-accent);
     --text-primary: var(--color-darkest);
-    --text-secondary: var(--color-dark-purple);
+    --text-secondary: var(--color-dark-secondary);
     --background: var(--color-lightest);
     --surface: var(--color-lightest);
-    --border: rgba(144, 126, 143, 0.3); /* Using light-purple with transparency for borders */
-    --shadow: 0 4px 6px -1px rgba(33, 29, 34, 0.1); /* Shadow using darkest color */
-    --shadow-lg: 0 10px 15px -3px rgba(33, 29, 34, 0.15); /* Larger shadow */
-    --gradient: linear-gradient(135deg, var(--color-medium-purple) 0%, var(--color-dark-purple) 100%);
+    --border: rgba(120, 41, 15, 0.3); /* Using dark-secondary with transparency for borders */
+    --shadow: 0 4px 6px -1px rgba(0, 21, 36, 0.1); /* Shadow using darkest color */
+    --shadow-lg: 0 10px 15px -3px rgba(0, 21, 36, 0.15); /* Larger shadow */
+    --gradient: linear-gradient(135deg, var(--color-medium-primary) 0%, var(--color-dark-secondary) 100%);
 }
 
 /* Base body styles */
@@ -34,13 +34,19 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Lato', sans-serif; /* Changed font */
     line-height: 1.6;
     color: var(--text-primary);
     background: var(--background);
     overflow-x: hidden; /* Prevent horizontal scroll */
     scroll-behavior: smooth; /* Smooth scrolling for the entire page */
 }
+
+/* Headings use Source Sans Pro */
+h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif; /* Changed font */
+}
+
 
 /* Container for consistent content width */
 .container {
@@ -116,9 +122,8 @@ nav {
     align-items: center;
     color: white;
     position: relative;
-    overflow: hidden;
-    /* Direct background image on .hero */
-    background: url('/images/home.jpg') no-repeat center center;
+    /* Updated background image to the uploaded file */
+    background: url('uploaded:rene-bohmer-YeUVDKZWSZ4-unsplash.jpg-6814c47b-0e79-4381-a9c4-0c6aaaab2240') no-repeat center center;
     background-size: cover;
 }
 
@@ -314,35 +319,64 @@ nav {
     color: white; /* Ensure text is visible on dark background */
 }
 
-.professional-items {
+/* NEW STYLES FOR PROFESSIONAL SKILLS BOXES */
+.professional-skill-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Same grid as tech-logos */
+    gap: 1rem;
+}
+
+.professional-skill-box {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-}
-
-.professional-item {
-    display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 0.8rem;
-    background: rgba(113, 91, 110, 0.05); /* Using primary color with transparency */
-    border-radius: 8px;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(21, 97, 109, 0.05); /* Using primary color with transparency for subtle background */
+    border-radius: 12px; /* Matching tech-logo */
     transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(120, 41, 15, 0.1); /* Lighter border from dark-secondary */
 }
 
-.professional-item:hover {
-    background: rgba(113, 91, 110, 0.1);
-    transform: translateX(5px);
+.professional-skill-box:hover {
+    transform: translateY(-3px);
+    background: rgba(21, 97, 109, 0.1); /* Slightly darker on hover */
 }
 
-.professional-item i {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    width: 20px;
+.professional-skill-box i {
+    font-size: 1.5rem; /* Matching tech-logo */
+    color: var(--primary-color); /* Primary color for icons */
 }
 
-.professional-item span {
+.professional-skill-box span {
+    font-size: 0.9rem; /* Matching tech-logo */
     font-weight: 500;
+    color: var(--text-primary); /* Dark text for light background */
+}
+
+/* Skill Level Styling (Option 1) */
+.skill-level {
+    font-size: 0.4rem; /* Made font size even smaller */
+    font-weight: 400; /* Reverted to original font-weight */
+    margin-top: 0.2rem; /* Small space from the skill name */
+    padding: 0.2em 0.5em; /* Small padding for readability */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+.skill-level.beginner {
+    color: #ffffff; 
+    background-color: rgba(120, 41, 15, 0.5);
+}
+.skill-level.intermediate {
+    color: #ffffff; 
+    /*color: var(--accent-color); */
+    background-color: rgba(255, 125, 0, 0.5);
+}
+.skill-level.advanced {
+    color: #ffffff; 
+    /*color: var(--primary-color); */ 
+    background-color: rgba(21, 97, 109, 0.5);
 }
 
 /* Projects Section */
@@ -450,7 +484,7 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(33, 29, 34, 0.9); /* Using darkest color for overlay */
+    background: rgba(0, 21, 36, 0.9); /* Using darkest color for overlay */
     color: white;
     padding: 2rem;
     display: flex;
@@ -532,7 +566,7 @@ nav {
 }
 
 .view-demo-btn:hover {
-    background: var(--color-light-purple); /* Darker accent on hover */
+    background: var(--color-light-accent); /* Darker accent on hover */
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
