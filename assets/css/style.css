@@ -784,12 +784,12 @@ footer {
     box-shadow: var(--shadow-lg);
     padding: 1.5rem;
     position: relative;
-    width: 90%;
-    max-width: 900px; /* Max width for the modal */
-    height: 80%; /* Max height for the modal */
+    width: 90vw; 
+    max-width: 2400px; 
+    height: 90vh; 
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Hide scrollbars if content overflows */
+    overflow: hidden;
 }
 
 .modal-close-btn {

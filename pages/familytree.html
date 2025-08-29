@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Family Tree Project</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Ensures the body background matches the theme */
+        body {
+            background-color: var(--surface);
+        }
+        .write-up-card .project-content {
+            text-align: left; /* Aligns text to the left for readability */
+        }
+        .write-up-card h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        .write-up-card p {
+            margin-bottom: 1rem;
+        }
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: var(--text-primary);
+        }
+        .demo-iframe {
+            width: 100%;
+            height: 80vh;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-top: 1rem;
+            background-color: #fff;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container" style="padding-top: 4rem; padding-bottom: 2rem;">
+
+        <h1 class="page-title">The Family Tree Project</h1>
+
+        <div class="project-card write-up-card">
+            <div class="project-content">
+                <h2 class="project-title">Project Deep Dive</h2>
+                
+                <h3>Project Goal</h3>
+                <p>The main goal was to create something more dynamic than your typical static chart. We wanted a fully interactive canvas where you could visually build out your family history, and importantly, have it all save right in your browser. No accounts, no cloud saves—just a seamless experience where you could pick up right where you left off. The focus was really on making it a user-friendly, self-contained tool that felt both powerful and easy to manage.</p>
+                
+                <h3>Features &amp; Technical Hurdles</h3>
+                <p>We ended up packing in a pretty robust feature set. You've got all the core functionality like adding, editing, and deleting family members and their relationships, plus the interactive canvas with pan and zoom. We also built out a whole suite of filters—by tags, roles, generation, and even that new toggle for showing deceased members—and a full import/export system for everything from JSON to PNGs and CSVs. On the development side, a couple of things were pretty tricky. Keeping the UI perfectly in sync with the data was a constant focus; if you delete someone, you have to make sure not just their card vanishes, but all their connection lines do too. Speaking of those lines, getting the SVG coordinates right was a headache until we figured out the timing for the browser to render everything first. It's those little details that really test the logic.</p>
+                
+                <h3>Development Process &amp; AI Collaboration</h3>
+                <p>From a project management standpoint, using an AI for development was fascinating. The biggest takeaway was how crucial clear instructions are. You really have to be specific with your prompts, because any gray area gets interpreted, and you might not get what you envisioned. We found that breaking down the work into smaller, specific features—like "add the deceased toggle" instead of "add all the filters"—worked best. Trying to do too much at once just led to confusing or incomplete results. But honestly, the speed was the game-changer. Being able to go from an idea to a working prototype in minutes was just incredible. It made the whole process feel less like a grind and more like a really fast, creative session.</p>
+            </div>
+        </div>
+
+    </div> <div class="project-card demo-wrapper">
+        <div class="project-content">
+            <h2 class="project-title">Live Application Demo</h2>
+            <p class="project-description">Feel free to interact with the full web-app below or navigate directly <a href="https://techcabana.github.io/TheFamilyTreeProject/index.html" target="_blank">here</a>.</p>
+            <iframe class="demo-iframe" src="https://techcabana.github.io/TheFamilyTreeProject/" title="Live Demo of The Family Tree Project"></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
