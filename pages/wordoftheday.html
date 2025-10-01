@@ -95,15 +95,15 @@
                 <p>This project started with a pretty straightforward goal: I wanted to learn new words without having to remember to check a website or download another app that would clutter my phone. The solution? A simple Python script that grabs the word of the day from Wordnik and shoots it straight to my phone via SMS using Twilio. It's low-cost, lightweight, and once you set it up, it just works in the background—no daily effort required.</p>
                 
                 <div class="screenshot-container">
-                    <img src="../images/wordoftheday_screenshot1.png" alt="Word of the Day SMS Screenshot" class="project-screenshot">
-                    <p class="screenshot-caption">Daily word delivery via SMS with definition and example usage</p>
+                    <img src="../images/wordoftheday_sms.PNG" alt="Word of the Day SMS Screenshot" class="project-screenshot">
+                    <p class="screenshot-caption">Daily word delivery via SMS.</p>
                 </div>
                 
                 <h3>Implementation & Technical Considerations</h3>
                 <p>Getting this working was all about making sure it was reliable and easy to debug. The script pulls data from Wordnik's API, formats it into a text-friendly message, and sends it through Twilio. But here's the thing—I knew I'd need to troubleshoot eventually, so I built in comprehensive logging from the start. Every time the script runs, it logs whether it succeeded or failed, what the APIs returned, and whether the SMS actually went through. This way, if something breaks—maybe I hit an API limit or there's a network hiccup—I can check the logs and know exactly what went wrong. It's basically like having a paper trail that tells you the full story every single day.</p>
                 
                 <div class="screenshot-container">
-                    <img src="../images/wordoftheday_screenshot2.png" alt="Script Execution Log Screenshot" class="project-screenshot">
+                    <img src="../images/Logging_WordOfTheDay.png" alt="Script Execution Log Screenshot" class="project-screenshot">
                     <p class="screenshot-caption">Execution logs showing successful API calls and message delivery</p>
                 </div>
                 
