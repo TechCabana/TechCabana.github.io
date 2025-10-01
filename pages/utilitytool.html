@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Tool Demo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #FFECD1;
+            color: #001524;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 2rem;
+        }
+        .page-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #15616D;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .write-up-card {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 21, 36, 0.1);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(120, 41, 15, 0.3);
+        }
+        .write-up-card .project-content {
+            text-align: left;
+        }
+        .write-up-card .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #001524;
+            text-align: center;
+        }
+        .write-up-card h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #15616D;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .write-up-card p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #001524;
+            text-align: left;
+        }
+        .screenshot-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .project-screenshot {
+            width: 1200px;
+            height: 600px;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 2px solid rgba(120, 41, 15, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 21, 36, 0.15);
+            background-color: #f5f5f5;
+            display: block;
+            margin: 0 auto;
+        }
+        .screenshot-container .screenshot-caption {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: #78290F;
+            font-style: italic;
+            text-align: center !important;
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Utility Tool: Swiss Army Edition</h1>
+
+        <div class="write-up-card">
+            <div class="project-content">
+                <h2 class="project-title">Project Deep Dive</h2>
+                
+                <h3>Building a Desktop Tool That Actually Gets Used</h3>
+                <p>This project started from a pretty basic frustration: I kept running into situations where I needed to batch process images or rename a bunch of files, and the options were either paid services or didn't quite do what I needed. So I built a cross-platform desktop app using PySide6 that handles both image manipulation and file management in one place. The goal was to create something simple enough that you don't need to read a manual, but powerful enough to handle real-world tasks like compressing dozens of photos for a website or renaming files with custom patterns. It's got a clean, dark-themed UI that's easy on the eyes, and everything's organized into tabs so you can quickly jump between working with images or files without losing your place.</p>
+                
+                <div class="screenshot-container">
+                    <img src="../assets/images/utilitytool.png" alt="Utility Tool Interface Screenshot" class="project-screenshot">
+                    <p class="screenshot-caption">Modern dark-themed interface with sidebar navigation</p>
+                </div>
+                
+                <h3>Features That Actually Make Life Easier</h3>
+                <p>On the image side, you can drag and drop photos and compress them, resize them (including specific passport photo sizes for India and the Netherlands), or convert between formats like JPEG, PNG, and WEBP. Everything runs with progress bars and estimated completion times, so you're not just staring at a frozen screen wondering if it's working. The file tools let you batch rename with all sorts of options—custom patterns, prefixes, suffixes, automatic numbering with padding, regex find-and-replace, and even date-based naming pulled from file modification times or the current date. You can also pick a custom destination folder if you want to keep your originals untouched. The best part? You can save presets for both image and file operations, so if you're doing the same type of processing regularly, you just load your preset and go. No need to remember all your settings from last time.</p>
+                
+                <h3>Technical Details & Cross-Platform Compatibility</h3>
+                <p>Under the hood, it's all Python with PySide6 handling the UI and Pillow doing the heavy lifting for image processing. The app uses threaded workers for batch operations so the interface stays responsive even when you're processing hundreds of files—you can see progress in real-time and even stop mid-process if needed. It saves presets and settings to your system's standard application directory (Library/Application Support on Mac, AppData on Windows, .config on Linux), so everything persists between sessions. The code is structured pretty cleanly with separate modules for image utilities, file utilities, and preset management, which makes it easy to extend if I want to add more features later. And because I used PyInstaller, you can build it into a standalone .app for Mac or .exe for Windows—no need to have Python installed or deal with dependencies. It's just a tool that works, and that's exactly what I wanted to build.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
