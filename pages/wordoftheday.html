@@ -65,21 +65,25 @@
             text-align: center;
         }
         .project-screenshot {
+            width: 1200px;
+            height: 600px;
             max-width: 100%;
-            height: auto;
+            object-fit: contain;
             border-radius: 8px;
             border: 2px solid rgba(120, 41, 15, 0.2);
             box-shadow: 0 4px 10px rgba(0, 21, 36, 0.15);
             background-color: #f5f5f5;
-            min-height: 300px;
             display: block;
             margin: 0 auto;
         }
-        .screenshot-caption {
+        .screenshot-container .screenshot-caption {
             margin-top: 0.8rem;
             font-size: 0.9rem;
             color: #78290F;
             font-style: italic;
+            text-align: center !important;
+            display: block;
+            width: 100%;
         }
     </style>
 </head>
@@ -95,15 +99,15 @@
                 <p>This project started with a pretty straightforward goal: I wanted to learn new words without having to remember to check a website or download another app that would clutter my phone. The solution? A simple Python script that grabs the word of the day from Wordnik and shoots it straight to my phone via SMS using Twilio. It's low-cost, lightweight, and once you set it up, it just works in the background—no daily effort required.</p>
                 
                 <div class="screenshot-container">
-                    <img src="../images/wordoftheday_sms.PNG" alt="Word of the Day SMS Screenshot" class="project-screenshot">
-                    <p class="screenshot-caption">Daily word delivery via SMS.</p>
+                    <img src="../assets/images/wordoftheday_sms.PNG" alt="Word of the Day SMS Screenshot" class="project-screenshot">
+                    <p class="screenshot-caption">Daily word delivery via SMS</p>
                 </div>
                 
                 <h3>Implementation & Technical Considerations</h3>
                 <p>Getting this working was all about making sure it was reliable and easy to debug. The script pulls data from Wordnik's API, formats it into a text-friendly message, and sends it through Twilio. But here's the thing—I knew I'd need to troubleshoot eventually, so I built in comprehensive logging from the start. Every time the script runs, it logs whether it succeeded or failed, what the APIs returned, and whether the SMS actually went through. This way, if something breaks—maybe I hit an API limit or there's a network hiccup—I can check the logs and know exactly what went wrong. It's basically like having a paper trail that tells you the full story every single day.</p>
                 
                 <div class="screenshot-container">
-                    <img src="../images/Logging_WordOfTheDay.png" alt="Script Execution Log Screenshot" class="project-screenshot">
+                    <img src="../assets/images/Logging_WordOfTheDay.png" alt="Script Execution Log Screenshot" class="project-screenshot">
                     <p class="screenshot-caption">Execution logs showing successful API calls and message delivery</p>
                 </div>
                 
