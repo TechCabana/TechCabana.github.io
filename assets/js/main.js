@@ -145,3 +145,43 @@ demoModal.addEventListener('click', function(e) {
         demoIframe.src = '';
     }
 });
+// Interactive Skill Level Filter
+document.addEventListener('DOMContentLoaded', function() {
+    const legendItems = document.querySelectorAll('.legend-item');
+    
+    if (legendItems.length > 0) {
+        legendItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const level = this.getAttribute('data-level');
+                
+                // Update active state
+                legendItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter skills
+                filterSkills(level);
+            });
+        });
+    }
+});
+
+function filterSkills(level) {
+    // Get all skill items (both technical and professional)
+    const allTechSkills = document.querySelectorAll('.tech-logo');
+    const allProfSkills = document.querySelectorAll('.professional-skill-box');
+    
+    // Combine both arrays
+    const allSkills = [...allTechSkills, ...allProfSkills];
+    
+    allSkills.forEach(skill => {
+        const skillLevel = skill.getAttribute('data-level');
+        
+        if (level === 'all') {
+            skill.classList.remove('hidden');
+        } else if (skillLevel === level) {
+            skill.classList.remove('hidden');
+        } else {
+            skill.classList.add('hidden');
+        }
+    });
+}

@@ -818,6 +818,82 @@ footer {
     margin-top: 1rem; /* Space below close button */
 }
 
+/* Skill Level Dots - replaces text badges */
+.skill-level-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 0.3rem;
+}
+
+.skill-level-dot.advanced {
+    background: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.skill-level-dot.intermediate {
+    background: #f59e0b;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
+.skill-level-dot.beginner {
+    background: #6b7280;
+    box-shadow: 0 0 8px rgba(107, 114, 128, 0.4);
+}
+
+/* Interactive Skill Legend */
+.skill-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    user-select: none;
+}
+
+.legend-item:hover {
+    background: rgba(21, 97, 109, 0.05);
+    transform: translateY(-2px);
+}
+
+.legend-item.active {
+    background: rgba(21, 97, 109, 0.1);
+    border-color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Skill filtering - hide non-matching skills */
+.tech-logo.hidden,
+.professional-skill-box.hidden {
+    opacity: 0.2;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+/* Remove the old text-based skill level styling */
+.skill-level {
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
