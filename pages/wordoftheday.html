@@ -3,93 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthcare App Demo</title>
+    <title>Word of the Day Demo</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Lato', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #FFECD1; /* lightest */
-            color: #001524; /* darkest */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            background-color: #FFECD1;
+            color: #001524;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding-top: 2rem;
+        }
+        .page-title {
             text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #15616D;
+            font-family: 'Source Sans Pro', sans-serif;
         }
-        .app-screen {
-            background-color: #FFFFFF; /* Keeping white for contrast */
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 21, 36, 0.15); /* Shadow using darkest */
-            width: 320px; /* Typical phone width */
-            height: 580px; /* Typical phone height */
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            border: 5px solid #001524; /* darkest for phone border */
-            position: relative;
+        .write-up-card {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 21, 36, 0.1);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(120, 41, 15, 0.3);
         }
-        .app-header {
-            background-color: #15616D; /* medium-primary */
-            color: white;
-            padding: 15px;
-            font-size: 1.2em;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .app-header i {
-            font-size: 1.1em;
-        }
-        .app-content {
-            flex-grow: 1;
-            padding: 20px;
-            overflow-y: auto;
+        .write-up-card .project-content {
             text-align: left;
         }
-        .patient-card {
-            background-color: #F8F4F1; /* A very light shade of lightest for card background */
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(120, 41, 15, 0.3); /* border using dark-secondary */
+        .write-up-card .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #001524;
+            text-align: center;
         }
-        .patient-card h4 {
-            color: #15616D; /* medium-primary */
-            margin-bottom: 5px;
+        .write-up-card h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #15616D;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.1rem;
+            text-align: center;
         }
-        .status-badge {
-            display: inline-block;
-            background-color: #FF7D00; /* light-accent */
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            margin-top: 10px;
+        .write-up-card p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #001524;
+            text-align: left;
         }
-        .status-badge[style*="background-color: #766374;"] { /* Specific override for 'Action Needed' */
-            background-color: #78290F !important; /* dark-secondary for 'Action Needed' */
+        .screenshot-container {
+            margin: 2rem 0;
+            text-align: center;
         }
-        .action-button {
-            background-color: #FF7D00; /* light-accent */
-            color: white;
-            padding: 10px 15px;
-            border: none;
+        .project-screenshot {
+            max-width: 100%;
+            height: auto;
             border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.9em;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
+            border: 2px solid rgba(120, 41, 15, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 21, 36, 0.15);
+            background-color: #f5f5f5;
+            min-height: 300px;
+            display: block;
+            margin: 0 auto;
         }
-        .action-button:hover {
-            background-color: #E66A00; /* Slightly darker accent for hover */
+        .screenshot-caption {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: #78290F;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-    <p>To Be Developed</p>
+    <div class="container">
+        <h1 class="page-title">Word of the Day</h1>
+
+        <div class="write-up-card">
+            <div class="project-content">
+                <h2 class="project-title">Project Deep Dive</h2>
+                
+                <h3>Purpose & Motivation</h3>
+                <p>This project started with a pretty straightforward goal: I wanted to learn new words without having to remember to check a website or download another app that would clutter my phone. The solution? A simple Python script that grabs the word of the day from Wordnik and shoots it straight to my phone via SMS using Twilio. It's low-cost, lightweight, and once you set it up, it just works in the background—no daily effort required.</p>
+                
+                <div class="screenshot-container">
+                    <img src="../images/wordoftheday_screenshot1.png" alt="Word of the Day SMS Screenshot" class="project-screenshot">
+                    <p class="screenshot-caption">Daily word delivery via SMS with definition and example usage</p>
+                </div>
+                
+                <h3>Implementation & Technical Considerations</h3>
+                <p>Getting this working was all about making sure it was reliable and easy to debug. The script pulls data from Wordnik's API, formats it into a text-friendly message, and sends it through Twilio. But here's the thing—I knew I'd need to troubleshoot eventually, so I built in comprehensive logging from the start. Every time the script runs, it logs whether it succeeded or failed, what the APIs returned, and whether the SMS actually went through. This way, if something breaks—maybe I hit an API limit or there's a network hiccup—I can check the logs and know exactly what went wrong. It's basically like having a paper trail that tells you the full story every single day.</p>
+                
+                <div class="screenshot-container">
+                    <img src="../images/wordoftheday_screenshot2.png" alt="Script Execution Log Screenshot" class="project-screenshot">
+                    <p class="screenshot-caption">Execution logs showing successful API calls and message delivery</p>
+                </div>
+                
+                <h3>Flexibility & Scheduling Options</h3>
+                <p>One of my favorite parts about this project is how flexible it is. You can set it up with Windows Task Scheduler to run automatically every morning at whatever time works for you, or just fire it up manually from VS Code when you feel like testing it out. The whole setup is pretty minimal—you just need API keys from Wordnik and Twilio, plus your phone number, and you're good to go. It's also incredibly cheap to run since Twilio's free tier handles way more than one message per day, and Wordnik's API limits are generous. At the end of the day, it's a small, focused tool that does exactly what it needs to do without any unnecessary complexity.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
