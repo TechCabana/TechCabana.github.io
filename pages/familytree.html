@@ -5,32 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Family Tree Project</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Link to main CSS file -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Ensures the body background matches the theme */
+        /* Only page-specific overrides */
         body {
-            background-color: var(--surface);
+            padding-top: 4rem;
         }
-        .write-up-card .project-content {
-            text-align: left; /* Aligns text to the left for readability */
-        }
-        .write-up-card h3 {
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        .write-up-card p {
-            margin-bottom: 1rem;
-        }
+        
         .page-title {
             text-align: center;
             margin-bottom: 2rem;
             font-size: 2.5rem;
-            color: var(--text-primary);
+            color: var(--lightest);
         }
+        
+        .write-up-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+        
+        .write-up-card .project-content {
+            text-align: left;
+        }
+        
+        .write-up-card h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .write-up-card p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+        
+        .write-up-card .project-title {
+            color: var(--lightest);
+            text-align: center;
+        }
+        
         .demo-iframe {
             width: 100%;
             height: 80vh;
@@ -40,12 +62,14 @@
             background-color: #fff;
         }
         
+        .demo-wrapper {
+            background: var(--surface);
+            border: 1px solid var(--border);
+        }
     </style>
 </head>
 <body>
-
     <div class="container" style="padding-top: 4rem; padding-bottom: 2rem;">
-
         <h1 class="page-title">The Family Tree Project</h1>
 
         <div class="project-card write-up-card">
@@ -63,13 +87,13 @@
             </div>
         </div>
 
-    </div> <div class="project-card demo-wrapper">
-        <div class="project-content">
-            <h2 class="project-title">Live Application Demo</h2>
-            <p class="project-description">Feel free to interact with the full web-app below or navigate directly <a href="https://techcabana.github.io/TheFamilyTreeProject/index.html" target="_blank">here</a>.</p>
-            <iframe class="demo-iframe" src="https://techcabana.github.io/TheFamilyTreeProject/" title="Live Demo of The Family Tree Project"></iframe>
+        <div class="project-card demo-wrapper">
+            <div class="project-content">
+                <h2 class="project-title">Live Application Demo</h2>
+                <p class="project-description">Feel free to interact with the full web-app below or navigate directly <a href="https://techcabana.github.io/TheFamilyTreeProject/index.html" target="_blank" style="color: var(--primary);">here</a>.</p>
+                <iframe class="demo-iframe" src="https://techcabana.github.io/TheFamilyTreeProject/" title="Live Demo of The Family Tree Project"></iframe>
+            </div>
         </div>
     </div>
-
 </body>
 </html>

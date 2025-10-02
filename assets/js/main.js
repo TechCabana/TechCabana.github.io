@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links with proper offset
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -10,8 +10,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const nav = document.querySelector('nav');
             const navHeight = nav.offsetHeight;
             
-            // Calculate the target position minus nav height
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            // Calculate the target position minus nav height plus small buffer
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 0.5;
             
             // Smooth scroll to the calculated position
             window.scrollTo({
@@ -68,20 +68,48 @@ function showMessageBox(message, type = 'info') {
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    
-    const submitBtn = this.querySelector('.submit-btn');
+    const form = this;
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
+    const formsubmitUrl = form.getAttribute('data-formsubmit');
+    
+    // Update button state
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
     
-    setTimeout(() => {
-        showMessageBox(`Thank you, ${name}! Your message has been received. I'll get back to you soon.`);
-        this.reset();
+    // Convert FormData to JSON for FormSubmit AJAX endpoint
+    const data = {};
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
+    
+    // Send the form data via AJAX
+    fetch(formsubmitUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showMessageBox(`Thank you, ${formData.get('name')}! Your message has been sent successfully.`);
+            form.reset();
+        } else {
+            showMessageBox('Oops! Something went wrong. Please try again.', 'error');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showMessageBox('Oops! Something went wrong. Please try again.', 'error');
+    })
+    .finally(() => {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-    }, 1500);
+    });
 });
 
 // Intersection Observer for fade-in animations on elements
@@ -199,103 +227,95 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ===== PARALLAX SCROLL EFFECT =====
-// Weighted parallax with smooth, natural movement
+// ===== PARALLAX SCROLL EFFECT (IMPROVED) =====
+// Optimized parallax with proper performance and no nav interference
 let parallaxTicking = false;
+let lastScrollY = 0;
+
+function updateParallax() {
+    const scrolled = window.pageYOffset;
+    
+    // Only apply parallax if we're actually scrolling (not navigating)
+    if (Math.abs(scrolled - lastScrollY) > 5) {
+        // Hero parallax - lighter weight (0.3 factor)
+        const hero = document.querySelector('.hero-content');
+        if (hero && scrolled < window.innerHeight) {
+            const heroTransform = scrolled * 0.3;
+            const heroOpacity = Math.max(0, 1 - (scrolled / 700));
+            hero.style.transform = `translateY(${heroTransform}px)`;
+            hero.style.opacity = heroOpacity;
+        }
+        
+        // Section headers parallax - very subtle (0.05 factor)
+        document.querySelectorAll('.section-header, .section-title').forEach(header => {
+            const rect = header.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / windowHeight));
+                const offset = progress * 20; // Max 20px movement
+                header.style.transform = `translateY(${offset}px)`;
+            }
+        });
+        
+        // Cards parallax - minimal (0.02 factor)
+        document.querySelectorAll('.project-card, .skills-half').forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / windowHeight));
+                const offset = progress * 10; // Max 10px movement
+                
+                // Preserve hover state
+                if (!card.matches(':hover')) {
+                    card.style.transform = `translateY(${offset}px)`;
+                }
+            }
+        });
+    }
+    
+    lastScrollY = scrolled;
+    parallaxTicking = false;
+}
 
 window.addEventListener('scroll', () => {
     if (!parallaxTicking) {
-        window.requestAnimationFrame(() => {
-            const scrolled = window.pageYOffset;
-            
-            // Hero parallax - lighter weight (0.3 factor)
-            const hero = document.querySelector('.hero-content');
-            if (hero && scrolled < window.innerHeight) {
-                const heroTransform = scrolled * 0.3;
-                const heroOpacity = Math.max(0, 1 - (scrolled / 700));
-                hero.style.transform = `translateY(${heroTransform}px)`;
-                hero.style.opacity = heroOpacity;
-            }
-            
-            // Section headers parallax - very subtle (0.08 factor)
-            document.querySelectorAll('.section-header, .section-title').forEach(header => {
-                const rect = header.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                if (rect.top < windowHeight && rect.bottom > 0) {
-                    const progress = (windowHeight - rect.top) / windowHeight;
-                    const offset = progress * 30; // Max 30px movement
-                    header.style.transform = `translateY(${offset}px)`;
-                }
-            });
-            
-            // Cards and skills parallax - minimal (0.03 factor)
-            document.querySelectorAll('.project-card, .skills-half').forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                if (rect.top < windowHeight && rect.bottom > 0) {
-                    const progress = (windowHeight - rect.top) / windowHeight;
-                    const offset = progress * 15; // Max 15px movement
-                    
-                    // Check if card is being hovered (don't override hover transform)
-                    const currentTransform = card.style.transform;
-                    if (!currentTransform || !currentTransform.includes('scale')) {
-                        card.style.transform = `translateY(${offset}px)`;
-                    }
-                }
-            });
-            
-            parallaxTicking = false;
-        });
+        window.requestAnimationFrame(updateParallax);
         parallaxTicking = true;
     }
-});
+}, { passive: true });
 
 // Enhanced project card interactions
 document.querySelectorAll('.project-card').forEach(card => {
-    // Track mouse position for radial gradient effect
-    card.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        // Update CSS custom properties for dynamic gradient
-        this.style.setProperty('--mouse-x', `${x}px`);
-        this.style.setProperty('--mouse-y', `${y}px`);
-    });
-    
-    // Enhanced hover effect
     card.addEventListener('mouseenter', function() {
-        // Preserve parallax while adding hover effect
+        // Get current parallax offset
         const currentTransform = this.style.transform;
-        const yOffset = currentTransform.match(/translateY\(([^)]+)\)/);
-        const yValue = yOffset ? yOffset[1] : '0px';
+        const yMatch = currentTransform.match(/translateY\(([^)]+)\)/);
+        const yValue = yMatch ? yMatch[1] : '0px';
         
-        this.style.transform = `translateY(calc(${yValue} - 8px)) scale(1.02)`;
+        // Apply hover transform while preserving parallax
+        this.style.transform = `translateY(calc(${yValue} - 8px))`;
     });
     
     card.addEventListener('mouseleave', function() {
-        // Return to parallax position
+        // Reset to parallax position
         const rect = this.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const progress = (windowHeight - rect.top) / windowHeight;
-        const offset = progress * 15;
         
-        this.style.transform = `translateY(${offset}px) scale(1)`;
+        if (rect.top < windowHeight && rect.bottom > 0) {
+            const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / windowHeight));
+            const offset = progress * 10;
+            this.style.transform = `translateY(${offset}px)`;
+        }
     });
 });
-
-// Smooth scroll behavior enhancement
-document.documentElement.style.scrollBehavior = 'smooth';
 
 // Performance optimization: Pause animations when tab is not visible
 document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-        // Pause heavy animations when tab is hidden
         document.body.style.willChange = 'auto';
     } else {
-        // Resume animations when tab is visible
         document.body.style.willChange = 'transform';
     }
 });
@@ -310,7 +330,6 @@ window.addEventListener('load', () => {
             targetLink.classList.add('active');
         }
     } else {
-        // Set home as active by default
         const homeLink = document.querySelector('.nav-links a[href="#home"]');
         if (homeLink) {
             homeLink.classList.add('active');
@@ -318,4 +337,4 @@ window.addEventListener('load', () => {
     }
 });
 
-console.log('Portfolio initialized!');
+console.log('Portfolio Initialized');
