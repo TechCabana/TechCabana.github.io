@@ -68,45 +68,48 @@ function showMessageBox(message, type = 'info') {
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
+    console.log('=== FORM SUBMISSION STARTED ===');
+    
     const form = this;
-    const formData = new FormData(form);
     const submitBtn = form.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
-    const formsubmitUrl = form.getAttribute('data-formsubmit');
+    const name = form.querySelector('[name="from_name"]').value;
+    
+    console.log('Form data:', {
+        name: form.querySelector('[name="from_name"]').value,
+        email: form.querySelector('[name="from_email"]').value,
+        subject: form.querySelector('[name="subject"]').value,
+        message: form.querySelector('[name="message"]').value
+    });
     
     // Update button state
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
     
-    // Convert FormData to JSON for FormSubmit AJAX endpoint
-    const data = {};
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
+    console.log('Calling EmailJS...');
     
-    // Send the form data via AJAX
-    fetch(formsubmitUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(data)
+    // Send email using EmailJS
+    emailjs.sendForm(
+        'service_kmjfln4',      // Replace with your Service ID
+        'template_crstyii',     // Replace with your Template ID
+        form
+    )
+    .then(function(response) {
+        console.log('✅ SUCCESS!', response.status, response.text);
+        showMessageBox(`Thank you, ${name}! Your message has been sent successfully.`);
+        form.reset();
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            showMessageBox(`Thank you, ${formData.get('name')}! Your message has been sent successfully.`);
-            form.reset();
-        } else {
-            showMessageBox('Oops! Something went wrong. Please try again.', 'error');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
+    .catch(function(error) {
+        console.error('❌ FAILED...', error);
+        console.error('Error details:', {
+            status: error.status,
+            text: error.text,
+            message: error.message
+        });
         showMessageBox('Oops! Something went wrong. Please try again.', 'error');
     })
-    .finally(() => {
+    .finally(function() {
+        console.log('=== FORM SUBMISSION ENDED ===');
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
     });

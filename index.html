@@ -476,34 +476,43 @@
 </section>
 
 
-    <section id="contact" class="contact" style="scroll-snap-align: start;">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2> <div class="contact-divider"></div>
-            <div class="contact-info">
-               <p>Please get in touch if you'd like to collaborate on a project or inquire more about experience.</p>
-            </div>
-
-           <form class="contact-form" id="contactForm" data-formsubmit="https://formsubmit.co/ajax/wahoge">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required placeholder="Tell me about your project or how I can help you..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+<section id="contact" class="contact" style="scroll-snap-align: start;">
+    <div class="container">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-divider"></div>
+        <div class="contact-info">
+            <p>Please get in touch if you'd like to collaborate on a project or inquire more about experience.</p>
         </div>
-    </section>
+
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="from_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="from_email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Tell me about your project or how I can help you..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    // Initialize EmailJS with your Public Key
+    (function(){
+        emailjs.init("Q0ETI2Cxz-CUFHyOb"); 
+    })();
+</script>
 
     <footer>
         <div class="container">
