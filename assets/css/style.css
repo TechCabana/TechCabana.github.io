@@ -83,7 +83,7 @@ section {
 }
 
 .sec-eyebrow {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -147,7 +147,7 @@ section {
 .nav-logo {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 24px;
     letter-spacing: -0.02em;
     color: var(--head);
 }
@@ -159,7 +159,7 @@ section {
 }
 
 .nav-links a {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.6);
     letter-spacing: 0.03em;
@@ -263,7 +263,7 @@ section {
 
 .hero-pre {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--body);
     letter-spacing: 0.08em;
     margin-bottom: 16px;
@@ -289,7 +289,7 @@ section {
 }
 
 .hero-tagline {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 300;
     color: var(--body);
     line-height: 1.75;
@@ -313,7 +313,7 @@ section {
 }
 
 .meta-label {
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -321,7 +321,7 @@ section {
 }
 
 .meta-value {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--head);
 }
@@ -349,7 +349,7 @@ section {
     justify-content: center;
     gap: 8px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--accent);
     background: var(--accent-dim);
@@ -382,7 +382,7 @@ section {
     padding: 13px 20px;
     border-radius: 8px;
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -424,7 +424,7 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--body);
     letter-spacing: 0.1em;
@@ -455,7 +455,7 @@ section {
 }
 
 .about-bio p {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 300;
     line-height: 1.85;
     color: var(--body);
@@ -488,14 +488,14 @@ section {
 .stat-value {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 800;
-    font-size: 28px;
+    font-size: 32px;
     letter-spacing: -0.03em;
     color: var(--head);
     margin-bottom: 4px;
 }
 
 .stat-label {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--head);
     letter-spacing: 0.04em;
@@ -567,7 +567,7 @@ section {
     justify-content: center;
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 800;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--head);
     flex-shrink: 0;
 }
@@ -575,7 +575,7 @@ section {
 .exp-company {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 21px;
     letter-spacing: -0.02em;
     color: var(--head);
     margin-bottom: 5px;
@@ -586,7 +586,7 @@ section {
     align-items: center;
     gap: 8px;
     flex-wrap: wrap;
-    font-size: 11px;
+    font-size: 13px;
     color: var(--body);
 }
 
@@ -604,14 +604,14 @@ section {
 
 .exp-date {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--body);
     letter-spacing: 0.04em;
     white-space: nowrap;
 }
 
 .tenure-pill {
-    font-size: 10px;
+    font-size: 12px;
     color: var(--body);
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid var(--border);
@@ -625,7 +625,7 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -652,7 +652,7 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -666,7 +666,7 @@ section {
 
 .badge-promo::before {
     content: '↑';
-    font-size: 10px;
+    font-size: 12px;
 }
 
 /* Roles body */
@@ -700,7 +700,7 @@ section {
 
 .exp-date-small {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--body);
     letter-spacing: 0.04em;
 }
@@ -716,7 +716,7 @@ section {
 .exp-role-title {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 17px;
     letter-spacing: -0.01em;
     color: var(--head);
 }
@@ -729,7 +729,7 @@ section {
 }
 
 .exp-bullets li {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 300;
     line-height: 1.75;
     color: var(--body);
@@ -743,13 +743,13 @@ section {
     left: 0;
     color: var(--accent);
     opacity: 0.5;
-    font-size: 11px;
+    font-size: 13px;
     top: 3px;
 }
 
 .metric {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     color: var(--accent);
     background: var(--accent-dim);
@@ -772,7 +772,7 @@ section {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
     color: var(--promo);
     letter-spacing: 0.1em;
@@ -818,7 +818,7 @@ section {
     align-items: center;
     gap: 6px;
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     color: var(--body);
     background: var(--bg);
@@ -885,14 +885,14 @@ section {
 .bento-cat {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: -0.01em;
     color: var(--head);
 }
 
 .bento-count {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
+    font-size: 11px;
     color: var(--body);
     letter-spacing: 0.04em;
 }
@@ -909,7 +909,7 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 400;
     color: var(--body);
     background: rgba(255, 255, 255, 0.04);
@@ -1001,7 +1001,7 @@ section {
 
 .project-num {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.35);
     letter-spacing: 0.04em;
@@ -1018,7 +1018,7 @@ section {
 .project-title {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 21px;
     letter-spacing: -0.01em;
     color: var(--head);
     margin-bottom: 8px;
@@ -1026,7 +1026,7 @@ section {
 }
 
 .project-desc {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 300;
     line-height: 1.7;
     color: var(--body);
@@ -1050,7 +1050,7 @@ section {
 
 .proj-tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     padding: 3px 8px;
     border-radius: 4px;
     background: var(--accent-dim);
@@ -1115,7 +1115,7 @@ section {
 .edu-degree-initial {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 800;
-    font-size: 18px;
+    font-size: 21px;
     letter-spacing: -0.02em;
     color: var(--accent);
     background: var(--accent-dim);
@@ -1128,14 +1128,14 @@ section {
 .edu-degree {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: -0.01em;
     color: var(--head);
     margin-bottom: 5px;
 }
 
 .edu-institution {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
     color: var(--body);
     margin-bottom: 4px;
@@ -1143,7 +1143,7 @@ section {
 
 .edu-date {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--body);
     letter-spacing: 0.04em;
 }
@@ -1157,7 +1157,7 @@ section {
 }
 
 .certs-label {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -1172,7 +1172,7 @@ section {
 }
 
 .cert-pill {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     color: var(--body);
     background: rgba(255, 255, 255, 0.04);
@@ -1203,7 +1203,7 @@ section {
 }
 
 .contact-sub {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     color: var(--body);
     line-height: 1.7;
@@ -1232,7 +1232,7 @@ section {
 }
 
 .form-field label {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -1242,7 +1242,7 @@ section {
 .form-field input,
 .form-field textarea {
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
     color: var(--head);
     background: var(--surf);
@@ -1257,7 +1257,7 @@ section {
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-    color: var(--body);
+    color: var(--muted);
 }
 
 .form-field input:focus,
@@ -1276,7 +1276,7 @@ section {
     background: var(--accent);
     color: var(--bg);
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1299,7 +1299,7 @@ section {
 }
 
 .contact-links-label {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -1342,7 +1342,7 @@ section {
 }
 
 .social-link-platform {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -1351,7 +1351,7 @@ section {
 }
 
 .social-link-handle {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--head);
 }
@@ -1384,7 +1384,7 @@ section {
 
 .footer-copy {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--body);
     letter-spacing: 0.04em;
 }
