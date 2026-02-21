@@ -3,650 +3,760 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechCabana</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Ankhit Sharma — Senior Product Manager</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <nav>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════════ -->
+    <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">TechCabana</div>
+            <div class="nav-logo">AS</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
     </nav>
 
-    <section id="home" class="hero" style="scroll-snap-align: start;">
-        <div id="particles-js"></div> 
-        <div class="container">
-            <div class="hero-content">
-                <div class="logo-section">
-                    <h1>Ankhit Sharma</h1>
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section id="home" class="hero">
+        <div id="particles-js"></div>
+
+        <div class="hero-body">
+            <div class="hero-inner">
+
+                <div class="hero-left">
+                    <div class="hero-pre">Profile</div>
+                    <h1 class="hero-name">Ankhit Sharma</h1>
+                    <p class="hero-tagline">9+ years transforming data into tangible business value. Bridging technical capability with business strategy to deliver measurable impact across pan-European organisations.</p>
+                    <div class="hero-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Current Role</div>
+                            <div class="meta-value">Senior PM · Data & Analytics</div>
+                        </div>
+                        <div class="meta-sep"></div>
+                        <div class="meta-item">
+                            <div class="meta-label">Company</div>
+                            <div class="meta-value">TIP Trailer Services</div>
+                        </div>
+                        <div class="meta-sep"></div>
+                        <div class="meta-item">
+                            <div class="meta-label">Location</div>
+                            <div class="meta-value">Amsterdam</div>
+                        </div>
+                        <div class="meta-sep"></div>
+                        <div class="meta-item">
+                            <div class="meta-label">Experience</div>
+                            <div class="meta-value">9+ Years</div>
+                        </div>
+                    </div>
                 </div>
-                <a href="#projects" class="cta-button">Discover My Journey</a>
+
+                <div class="hero-right">
+                    <div class="status-chip">
+                        <span class="status-dot"></span>
+                        Open to opportunities
+                    </div>
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <!-- <a href="assets/files/AS_CV.pdf" class="btn btn-ghost" download>Download CV</a> -->
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hero-scroll-hint">
+            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════════ -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="sec-eyebrow fade-up">About</div>
+            <h2 class="sec-heading fade-up">A Data-Driven<br>Product Leader</h2>
+
+            <div class="about-grid">
+                <div class="about-bio fade-up">
+                    <p>A seasoned Product & Analytics leader with a 9+ year history of transforming data into tangible business value. I specialise in leading cross-functional teams and scaling data products that directly contribute to revenue growth and data-driven decision-making.</p>
+                    <p>My core strength lies in bridging technical capabilities with overarching business strategy — translating complex data infrastructure into products that operational, commercial, and executive stakeholders can actually use.</p>
+                    <p>From establishing data governance frameworks at scale to leading platform migrations that unlock real-time analytics, I build for long-term organisational impact.</p>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-card fade-up">
+                        <div class="stat-value">No</div>
+                        <div class="stat-label">Sponsorships Needed</div>
+                    </div>
+                    <div class="stat-card fade-up" style="--delay: 80ms">
+                        <div class="stat-value">Flexible</div>
+                        <div class="stat-label">Working Preference</div>
+                    </div>
+                    <!--<div class="stat-card fade-up" style="--delay: 160ms">
+                        <div class="stat-value">500+</div>
+                        <div class="stat-label">Hours Automated</div>
+                    </div>-->
+                    <!--<div class="stat-card fade-up" style="--delay: 240ms">
+                        <div class="stat-value">34k+</div>
+                        <div class="stat-label">Trailers Connected</div>-->
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="projects" style="scroll-snap-align: start;">
+    <!-- ═══════════════════════════════════════════
+         EXPERIENCE
+    ═══════════════════════════════════════════ -->
+    <section id="experience" class="experience-section">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="sec-eyebrow fade-up">Experience</div>
+            <h2 class="sec-heading fade-up">Where I've Worked</h2>
+
+            <!-- TIP TRAILER SERVICES — current -->
+            <div class="exp-card current fade-up">
+                <div class="exp-card-header">
+                    <div class="exp-logo">TG</div>
+                    <div class="exp-info">
+                        <div class="exp-company">TIP Group</div>
+                        <div class="exp-sub">
+                            <span class="exp-sub-sep">·</span>
+                            <span>Amsterdam</span>
+                        </div>
+                    </div>
+                    <div class="exp-header-right">
+                        <span class="badge-current">Current</span>
+                        <span class="exp-date">Feb 2022 — Present</span>
+                        <span class="tenure-pill">2 roles · 4 yrs</span>
+                    </div>
+                </div>
+                <div class="exp-roles">
+                    <div class="exp-role">
+                        <div class="exp-role-date-col">
+                            <span class="exp-date-small">Jan 2024 — Now</span>
+                        </div>
+                        <div class="exp-role-content">
+                            <div class="exp-role-title-row">
+                                <span class="exp-role-title">Senior Product Manager - Data & Analytics</span>
+                            </div>
+                            <ul class="exp-bullets">
+                                <li>Led strategic consolidation of data reporting into <span class="metric">Core Products</span>, reducing incidents from <span class="metric">35 → 3</span> per quarter.</li>
+                                <li>Driving platform migration from Azure Synapse to Databricks across <span class="metric">30+ pipelines</span>, cutting infrastructure costs by <span class="metric">~£90k/yr</span> and unlocking real-time analytics.</li>
+                                <li><span class="metric">Scaled and line-managed a team of 8</span>, serving operational, commercial, and executive stakeholders across a pan-European organisation.</li>
+                                <li>Automated over 500 hrs of manual processes through RPA, data extracts, and reporting pipelines.</li>
+                                <li>Supported rollout of telemetry ingestion across 34,000+ trailers and a mobile inspection platform used by 150+ users in 8+ countries.</li>
+                                <li>Defined OKR-aligned product vision and roadmap, directly contributing to <span class="metric">33% revenue growth</span> over two years.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="growth-connector">
+                        <span class="growth-label">Internal promotion</span>
+                        <div class="growth-line"></div>
+                    </div>
+                    
+                    <div class="exp-role">
+                        <div class="exp-role-date-col">
+                            <span class="exp-date-small">Feb 2022 — Jan 2024</span>
+                        </div>
+                        <div class="exp-role-content">
+                            <div class="exp-role-title-row">
+                                <span class="exp-role-title">Product Manager - Data & Analytics</span>
+                            </div>
+                            <ul class="exp-bullets">
+                                <li><span class="metric">Owned the end-to-end product roadmap</span> for a suite of data products, prioritising features and initiatives based on business value, stakeholder input, and company OKRs; making sure the team was always working on what mattered most.</li>
+                                <li>Worked closely with engineers, analysts, and business stakeholders to define product requirements, manage delivery, and ensure what was being built actually solved the right problems for the right users across a pan-European organisation.</li>
+                                <li>Tracked product performance post-launch by monitoring key metrics and incident trends, using the insights to <span class="metric">reduce friction for the 100+</span> users relying on them day-to-day.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GUARDIAN NEWS & MEDIA -->
+            <div class="exp-card fade-up">
+                <div class="exp-card-header">
+                    <div class="exp-logo">GN</div>
+                    <div class="exp-info">
+                        <div class="exp-company">Guardian News & Media</div>
+                        <div class="exp-sub">
+                            <span>Senior Business Data Analyst</span>
+                            <span class="exp-sub-sep">·</span>
+                            <span>London</span>
+                        </div>
+                    </div>
+                    <div class="exp-header-right">
+                        <span class="exp-date">Jul 2020 — Jan 2022</span>
+                        <span class="tenure-pill">1 role · 1.7 yrs</span>
+                    </div>
+                </div>
+                <div class="exp-roles">
+                    <div class="exp-role">
+                        <div class="exp-role-date-col">
+                            <span class="exp-date-small">Jul 2020 — Jan 2022</span>
+                        </div>
+                        <div class="exp-role-content">
+                            <div class="exp-role-title-row">
+                                <span class="exp-role-title">Senior Business Data Analyst</span>
+                            </div>
+                            <ul class="exp-bullets">
+                                <li>Managed end-to-end Data Catalogue Project — stakeholder onboarding, implementation planning, delivery management, and Tableau-based solutions across the business.</li>
+                                <li>Drove alignment on data governance principles across Senior Leadership to Operational stakeholders, influencing adoption of a <span class="metric">data as a product</span> mindset.</li>
+                                <li>Conducted data quality analysis using heuristic metrics and anomaly detection to identify root causes.</li>
+                                <li>Developed core data governance artefacts, processes, and workflows to streamline data curation organisation-wide.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEXUNA TECHNOLOGIES -->
+            <div class="exp-card fade-up">
+                <div class="exp-card-header">
+                    <div class="exp-logo">TT</div>
+                    <div class="exp-info">
+                        <div class="exp-company">Texuna Technologies</div>
+                        <div class="exp-sub">
+                            <span>BA → Lead BA → Analytics Project Manager</span>
+                            <span class="exp-sub-sep">·</span>
+                            <span>London</span>
+                        </div>
+                    </div>
+                    <div class="exp-header-right">
+                        <span class="exp-date">Dec 2015 — Jul 2020</span>
+                        <span class="tenure-pill">3 roles · 4.8 yrs</span>
+                    </div>
+                </div>
+                <div class="exp-roles">
+
+                    <!-- Latest role -->
+                    <div class="exp-role">
+                        <div class="exp-role-date-col">
+                            <span class="exp-date-small">Sep 2019 — Jul 2020</span>
+                        </div>
+                        <div class="exp-role-content">
+                            <div class="exp-role-title-row">
+                                <span class="exp-role-title">Analytics Project Manager</span>
+                            </div>
+                            <ul class="exp-bullets">
+                                <li><span class="metric">Managed projects worth £500k</span> in contract value with multi-disciplinary cross-office teams.</li>
+                                <li>Led sprint planning, backlog grooming, and daily stand-ups using SCRUM and Prince2 Agile frameworks.</li>
+                                <li>Maintained stakeholder engagement that generated continuous change-work and new revenue opportunities.</li>
+                                <li>Conducted ROI and cost-effort analysis to keep CAPEX/OPEX budgets on track and deliveries on time.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Internal promotion connector -->
+                    <div class="growth-connector">
+                        <span class="growth-label">Internal promotion</span>
+                        <div class="growth-line"></div>
+                    </div>
+
+                    <!-- Middle role -->
+                    <div class="exp-role">
+                        <div class="exp-role-date-col">
+                            <span class="exp-date-small">Dec 2017 — Sep 2019</span>
+                        </div>
+                        <div class="exp-role-content">
+                            <div class="exp-role-title-row">
+                                <span class="exp-role-title">Lead Business Analyst</span>
+                            </div>
+                            <ul class="exp-bullets">
+                                <li>Developed functional and non-functional requirements through process-flow diagrams, GAP analysis, data modelling workshops, and user envisioning sessions.</li>
+                                <li>Identified risks and opportunities via SWOT and PESTLE analysis, maintaining an active project risk register.</li>
+                                <li>Established <span class="metric">data governance frameworks and data supply contracts</span>  to ensure standardisation in Enterprise Data Warehouse projects, enabling Business Intelligence delivery.</li>
+                                <li>Coordinated information flow across varied stakeholders on daily and weekly cadences.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Internal promotion connector -->
+                    <div class="growth-connector">
+                        <span class="growth-label">Internal promotion</span>
+                        <div class="growth-line"></div>
+                    </div>
+
+                    <!-- Earlier role -->
+                    <div class="exp-role older">
+                        <div class="exp-role-date-col">
+                            <span class="exp-date-small">Dec 2015 — Dec 2017</span>
+                        </div>
+                        <div class="exp-role-content">
+                            <div class="exp-role-title-row">
+                                <span class="exp-role-title">Business Analyst</span>
+                            </div>
+                            <ul class="exp-bullets">
+                                <li>Translated business problems into clear, actionable solutions by running discovery sessions with stakeholders, challenging assumptions, and making sure the team was always solving the right problem; not just the one that was first put on the table.</li>
+                                <li><span class="metric">Bridged the gap between business and tech teams </span> by acting as the go-to person for turning vague business needs into detailed requirements that developers could actually work with, reducing back-and-forth and keeping delivery on track.</li>
+                                <li>Mapped and analysed existing business processes to spot inefficiencies, redundancies, and gaps; then worked with stakeholders to agree on improved future-state workflows before any solution was scoped or built.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SKILLS
+    ═══════════════════════════════════════════ -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="sec-eyebrow fade-up">Skills & Expertise</div>
+            <h2 class="sec-heading fade-up">What I Work With</h2>
+
+            <!-- Filter bar with legend integrated -->
+            <div class="skills-filter-bar fade-up">
+                <button class="filter-btn active" data-filter="all">All Skills</button>
+                <button class="filter-btn" data-filter="expert">
+                    <span class="level-dot expert-dot"></span>Expert
+                </button>
+                <button class="filter-btn" data-filter="proficient">
+                    <span class="level-dot proficient-dot"></span>Proficient
+                </button>
+                <button class="filter-btn" data-filter="familiar">
+                    <span class="level-dot familiar-dot"></span>Familiar
+                </button>
+            </div>
+
+            <!-- Bento grid -->
+            <div class="skills-bento-grid">
+
+                <!-- Product & PM -->
+                <div class="bento-card fade-up">
+                    <div class="bento-header">
+                        <span class="bento-cat">Product & PM</span>
+                        <span class="bento-count">12 skills</span>
+                    </div>
+                    <div class="bento-body">
+                        <span class="skill-tag expert" data-level="expert">Azure DevOps</span>
+                        <span class="skill-tag expert" data-level="expert">Trello</span>
+                        <span class="skill-tag expert" data-level="expert">Jira</span>
+                        <span class="skill-tag expert" data-level="expert">Redmine</span>
+                        <span class="skill-tag expert" data-level="expert">Miro</span>
+                        <span class="skill-tag expert" data-level="expert">MS Office</span>
+                        <span class="skill-tag proficient" data-level="proficient">SCRUM</span>
+                        <span class="skill-tag proficient" data-level="proficient">KANBAN</span>
+                        <span class="skill-tag proficient" data-level="proficient">GitHub</span>
+                        <span class="skill-tag proficient" data-level="proficient">Balsamiq</span>
+                        <span class="skill-tag proficient" data-level="proficient">Asana</span>
+                        <span class="skill-tag proficient" data-level="proficient">Confluence</span>
+                    </div>
+                </div>
+
+                <!-- Data Engineering & Cloud -->
+                <div class="bento-card fade-up" style="--delay: 60ms">
+                    <div class="bento-header">
+                        <span class="bento-cat">Data Engineering & Cloud</span>
+                        <span class="bento-count">16 skills</span>
+                    </div>
+                    <div class="bento-body">
+                        <span class="skill-tag expert" data-level="expert">Amazon S3</span>
+                        <span class="skill-tag proficient" data-level="proficient">Pentaho DI</span>
+                        <span class="skill-tag proficient" data-level="proficient">PostgreSQL</span>
+                        <span class="skill-tag proficient" data-level="proficient">MS SQL Server</span>
+                        <span class="skill-tag proficient" data-level="proficient">MySQL</span>
+                        <span class="skill-tag proficient" data-level="proficient">Salesforce</span>
+                        <span class="skill-tag proficient" data-level="proficient">Amazon Redshift</span>
+                        <span class="skill-tag proficient" data-level="proficient">Google BigQuery</span>
+                        <span class="skill-tag proficient" data-level="proficient">Google Filestore</span>
+                        <span class="skill-tag familiar" data-level="familiar">Azure Data Factory</span>
+                        <span class="skill-tag familiar" data-level="familiar">Databricks</span>
+                        <span class="skill-tag familiar" data-level="familiar">DBT</span>
+                        <span class="skill-tag familiar" data-level="familiar">Snowflake</span>
+                        <span class="skill-tag familiar" data-level="familiar">Amazon Glue</span>
+                        <span class="skill-tag familiar" data-level="familiar">Amazon Lambda</span>
+                        <span class="skill-tag familiar" data-level="familiar">Azure Storage</span>
+                    </div>
+                </div>
+
+                <!-- BI & Analytics -->
+                <div class="bento-card fade-up" style="--delay: 120ms">
+                    <div class="bento-header">
+                        <span class="bento-cat">BI & Analytics</span>
+                        <span class="bento-count">7 skills</span>
+                    </div>
+                    <div class="bento-body">
+                        <span class="skill-tag expert" data-level="expert">Tableau</span>
+                        <span class="skill-tag expert" data-level="expert">Alteryx</span>
+                        <span class="skill-tag proficient" data-level="proficient">Looker</span>
+                        <span class="skill-tag proficient" data-level="proficient">QlikView</span>
+                        <span class="skill-tag proficient" data-level="proficient">QlikSense</span>
+                        <span class="skill-tag proficient" data-level="proficient">Google Analytics</span>
+                        <span class="skill-tag familiar" data-level="familiar">PowerBI</span>
+                    </div>
+                </div>
+
+                <!-- Data Governance -->
+                <div class="bento-card fade-up" style="--delay: 60ms">
+                    <div class="bento-header">
+                        <span class="bento-cat">Data Governance</span>
+                        <span class="bento-count">6 skills</span>
+                    </div>
+                    <div class="bento-body">
+                        <span class="skill-tag expert" data-level="expert">Alation</span>
+                        <span class="skill-tag expert" data-level="expert">Unity Catalog</span>
+                        <span class="skill-tag expert" data-level="expert">Purview</span>
+                        <span class="skill-tag expert" data-level="expert">Soda</span>
+                        <span class="skill-tag proficient" data-level="proficient">Ataccama</span>
+                        <span class="skill-tag proficient" data-level="proficient">Collibra</span>
+                    </div>
+                </div>
+
+                <!-- Programming & Dev -->
+                <div class="bento-card fade-up" style="--delay: 120ms">
+                    <div class="bento-header">
+                        <span class="bento-cat">Programming & Dev</span>
+                        <span class="bento-count">10 skills</span>
+                    </div>
+                    <div class="bento-body">
+                        <span class="skill-tag expert" data-level="expert">SQL</span>
+                        <span class="skill-tag proficient" data-level="proficient">HTML5</span>
+                        <span class="skill-tag proficient" data-level="proficient">CSS3</span>
+                        <span class="skill-tag proficient" data-level="proficient">Postman</span>
+                        <span class="skill-tag familiar" data-level="familiar">Python</span>
+                        <span class="skill-tag familiar" data-level="familiar">JavaScript</span>
+                        <span class="skill-tag familiar" data-level="familiar">REST API</span>
+                        <span class="skill-tag familiar" data-level="familiar">PHP</span>
+                        <span class="skill-tag familiar" data-level="familiar">Java</span>
+                        <span class="skill-tag familiar" data-level="familiar">R</span>
+                    </div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div class="bento-card fade-up" style="--delay: 180ms">
+                    <div class="bento-header">
+                        <span class="bento-cat">Core Competencies</span>
+                        <span class="bento-count">10 skills</span>
+                    </div>
+                    <div class="bento-body">
+                        <span class="skill-tag expert" data-level="expert">Product Management</span>
+                        <span class="skill-tag expert" data-level="expert">Team Leadership</span>
+                        <span class="skill-tag expert" data-level="expert">Business Analysis</span>
+                        <span class="skill-tag expert" data-level="expert">Strategic Planning</span>
+                        <span class="skill-tag expert" data-level="expert">Stakeholder Mgmt</span>
+                        <span class="skill-tag expert" data-level="expert">Data Product Dev</span>
+                        <span class="skill-tag expert" data-level="expert">Innovation & Delivery</span>
+                        <span class="skill-tag proficient" data-level="proficient">Process Automation</span>
+                        <span class="skill-tag proficient" data-level="proficient">Market Research</span>
+                        <span class="skill-tag proficient" data-level="proficient">Mentoring</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PROJECTS
+    ═══════════════════════════════════════════ -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="sec-eyebrow fade-up">Projects</div>
+            <h2 class="sec-heading fade-up">Things I've Built</h2>
+
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <h3 class="project-title-overlay">The Family Tree Project</h3>
-                        <div class="project-badges-overlay">
-                        </div>
-                        <div class="project-description-overlay">
-                            <p>The web-app provides the ability to customize and visualize family trees easily with a host of controls. Including the ability to export all configurations without needing login details.</p>
+
+                <!-- Family Tree -->
+                <div class="project-card fade-up">
+                    <div class="project-thumb project-thumb-1">
+                        <div class="project-thumb-inner">
+                            <span class="project-num">01</span>
                         </div>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">The Family Tree Project</h3>
-                        <!-- <p class="project-description">A family tree web-app for visualizing your family history and connecting with relatives.</p> -->
-                        <div class="tech-badges">
-                            <span class="tech-badge"><i class="fab fa-html5"></i> HTML</span>
-                            <span class="tech-badge"><i class="fab fa-css3"></i> CSS</span>
-                            <span class="tech-badge"><i class="fab fa-js"></i> JavaScript</span>
+                    <div class="project-body">
+                        <h3 class="project-title">Family Tree</h3>
+                        <p class="project-desc">An interactive genealogy visualisation tool that transforms complex family relationship data into an explorable, zoomable canvas. Features pan & zoom, filters, import/export, and browser-based local saves — no account needed.</p>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span class="proj-tag">HTML</span>
+                                <span class="proj-tag">CSS</span>
+                                <span class="proj-tag">JavaScript</span>
+                            </div>
+                            <button class="proj-arrow-btn view-demo-btn" data-demo-src="pages/familytree.html" aria-label="View demo">
+                                <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
                         </div>
-                        <button class="view-demo-btn" data-demo-src="pages/familytree.html">View Demo</button>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <h3 class="project-title-overlay">Word of the Day</h3>
-                        <div class="project-description-overlay">
-                            <p>A simple Python script that automatically grabs the word of the day from Wordnik and texts it straight to your phone using Twilio. Set it up once using Windows Task Scheduler or run it from VS Code, and you'll get a new word with its definition and example delivered daily.</p>
+                <!-- Word of the Day -->
+                <div class="project-card fade-up" style="--delay: 80ms">
+                    <div class="project-thumb project-thumb-2">
+                        <div class="project-thumb-inner">
+                            <span class="project-num">02</span>
                         </div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-body">
                         <h3 class="project-title">Word of the Day</h3>
-                       <!-- <p class="project-description">A Python script that sends the word of the day to your phone.</p> -->
-                        <div class="tech-badges">
-                            <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <p class="project-desc">A Python script that automatically grabs the word of the day from Wordnik and texts it straight to your phone via Twilio. Set up once with Windows Task Scheduler and get a daily word with definition and example.</p>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span class="proj-tag">Python</span>
+                                <span class="proj-tag">Twilio</span>
+                                <span class="proj-tag">API</span>
+                            </div>
+                            <button class="proj-arrow-btn view-demo-btn" data-demo-src="pages/wordoftheday.html" aria-label="View demo">
+                                <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
                         </div>
-                        <button class="view-demo-btn" data-demo-src="pages/wordoftheday.html">View Demo</button>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <h3 class="project-title-overlay">Utility Tool</h3>
-                        <div class="project-description-overlay">
-                            <p>This is a cross-platform desktop utility application built with PySide6 that provides tools for batch processing images (compress, resize, format conversion) and files (batch rename with patterns, prefixes, regex). It features a modern dark-themed UI with preset management, drag-and-drop support, and real-time progress tracking for all operations.</p>
+                <!-- Utility Tool -->
+                <div class="project-card fade-up" style="--delay: 160ms">
+                    <div class="project-thumb project-thumb-3">
+                        <div class="project-thumb-inner">
+                            <span class="project-num">03</span>
                         </div>
                     </div>
-                    <div class="project-content">
+                    <div class="project-body">
                         <h3 class="project-title">Utility Tool</h3>
-                      <!--  <p class="project-description">A cross-platform desktop utility application for batch processing images and files.</p> -->
-                        <div class="tech-badges">
-                            <span class="tech-badge"><i class="fab fa-python"></i> Python</span>
+                        <p class="project-desc">A cross-platform desktop utility built with PySide6 for batch image processing (compress, resize, convert) and file management (rename with regex, prefixes, patterns). Dark-themed UI with drag-and-drop and real-time progress.</p>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span class="proj-tag">Python</span>
+                                <span class="proj-tag">PySide6</span>
+                            </div>
+                            <button class="proj-arrow-btn view-demo-btn" data-demo-src="pages/utilitytool.html" aria-label="View demo">
+                                <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
                         </div>
-                        <button class="view-demo-btn" data-demo-src="pages/utilitytool.html">View Demo</button>
                     </div>
                 </div>
 
-                
             </div>
         </div>
     </section>
 
-   <section id="skills" class="skills-section" style="scroll-snap-align: start;">
-    <div class="container">
-        <h2 class="section-title">Skills & Expertise</h2>
-        
-        <!-- NEW: Interactive Legend -->
-        <div class="skill-legend">
-            <div class="legend-item active" data-level="all">
-                <i class="fas fa-layer-group"></i>
-                <span>All Skills</span>
-            </div>
-            <div class="legend-item" data-level="advanced">
-                <span class="skill-level-dot advanced"></span>
-                <span>Advanced</span>
-            </div>
-            <div class="legend-item" data-level="intermediate">
-                <span class="skill-level-dot intermediate"></span>
-                <span>Intermediate</span>
-            </div>
-            <div class="legend-item" data-level="beginner">
-                <span class="skill-level-dot beginner"></span>
-                <span>Beginner</span>
-            </div>
-        </div>
-        
-        <div class="skills-grid-container">
-            <div class="skills-half technical-skills">
-                <div class="half-header">
-                    <i class="fas fa-cog"></i>
-                    <h3>Technical Skills</h3>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Product & Project Management Tools</h4>
-                    <div class="tech-logos">
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-cloud"></i>
-                            <span>Azure DevOps<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fab fa-trello"></i>
-                            <span>Trello<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fab fa-jira"></i>
-                            <span>Jira<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-ticket-alt"></i>
-                            <span>Redmine<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-chalkboard"></i>
-                            <span>Miro<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-users-cog"></i>
-                            <span>SCRUM<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-columns"></i>
-                            <span>KANBAN<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-file-alt"></i>
-                            <span>MS Office<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-drafting-compass"></i>
-                            <span>Balsamiq<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-tasks"></i>
-                            <span>Asana<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-book-open"></i>
-                            <span>Confluence<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Data Engineering & Warehousing</h4>
-                    <div class="tech-logos">
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fas fa-cubes"></i>
-                            <span>Azure Data Factory<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fas fa-cube"></i>
-                            <span>Databricks<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-exchange-alt"></i>
-                            <span>Pentaho Data Integration<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fas fa-code-branch"></i>
-                            <span>DBT<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-database"></i>
-                            <span>PostgreSQL<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-database"></i>
-                            <span>MS SQL Server<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-database"></i>
-                            <span>MySQL<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fas fa-snowflake"></i>
-                            <span>Snowflake<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-cloud"></i>
-                            <span>Salesforce<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fab fa-aws"></i>
-                            <span>Amazon Redshift<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-hdd"></i>
-                            <span>Amazon S3<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fas fa-link"></i>
-                            <span>Amazon Glue<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fas fa-server"></i>
-                            <span>Amazon Lambda<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fab fa-google"></i>
-                            <span>Google BigQuery<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-folder"></i>
-                            <span>Google Filestore<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fas fa-box"></i>
-                            <span>Azure Storage<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Business Intelligence & Analytics</h4>
-                    <div class="tech-logos">
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Tableau<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>PowerBI<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-eye"></i>
-                            <span>Looker<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-chart-area"></i>
-                            <span>QlikView<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-chart-pie"></i>
-                            <span>QlikSense<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-cogs"></i>
-                            <span>Alteryx<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fab fa-google"></i>
-                            <span>Google Analytics<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h4>Data Cataloguing & Data Quality</h4>
-                    <div class="tech-logos">
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-book"></i>
-                            <span>Alation<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-cubes"></i>
-                            <span>Unity Catalog<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Purview<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-flask"></i>
-                            <span>Soda<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Ataccama<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-database"></i>
-                            <span>Collibra<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h4>Programming & Web Technologies</h4>
-                    <div class="tech-logos">
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fab fa-python"></i>
-                            <span>Python<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="advanced">
-                            <i class="fas fa-file-code"></i>
-                            <span>SQL<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fab fa-js-square"></i>
-                            <span>JavaScript<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fab fa-php"></i>
-                            <span>PHP<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fab fa-java"></i>
-                            <span>Java<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fas fa-exchange-alt"></i>
-                            <span>REST API<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="beginner">
-                            <i class="fab fa-r-project"></i>
-                            <span>R<span class="skill-level-dot beginner"></span></span>
-                        </div>
-                        <div class="tech-logo" data-level="intermediate">
-                            <i class="fas fa-envelope"></i>
-                            <span>Postman<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="skills-half professional-skills">
-                <div class="half-header">
-                    <i class="fas fa-users"></i>
-                    <h3>Professional Skills</h3>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Core Competencies</h4>
-                    <div class="professional-skill-boxes">
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-tasks"></i>
-                            <span>Product Management<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>Project Management<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-users-cog"></i>
-                            <span>Team Leadership<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-comments"></i>
-                            <span>Communication<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-lightbulb"></i>
-                            <span>Problem Solving<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Strategic & Analytical</h4>
-                    <div class="professional-skill-boxes">
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Business Analysis<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-sitemap"></i>
-                            <span>Strategic Planning<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="intermediate">
-                            <i class="fas fa-search"></i>
-                            <span>Market Research<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-bullseye"></i>
-                            <span>Data-Driven Strategy<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h4>Operational Excellence</h4>
-                    <div class="professional-skill-boxes">
-                        <div class="professional-skill-box" data-level="intermediate">
-                            <i class="fas fa-robot"></i>
-                            <span>Process Automation<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <span>Operational Efficiency<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Collaboration & Growth</h4>
-                    <div class="professional-skill-boxes">
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-handshake"></i>
-                            <span>Stakeholder Management<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="intermediate">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                            <span>Mentoring & Coaching<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-rocket"></i>
-                            <span>Innovation & Delivery<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="advanced">
-                            <i class="fas fa-box-open"></i>
-                            <span>Data Product Development<span class="skill-level-dot advanced"></span></span>
-                        </div>
-                        <div class="professional-skill-box" data-level="intermediate">
-                            <i class="fas fa-sync-alt"></i>
-                            <span>Continuous Improvement<span class="skill-level-dot intermediate"></span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section id="contact" class="contact" style="scroll-snap-align: start;">
-    <div class="container">
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="contact-divider"></div>
-        <div class="contact-info">
-            <p>Please get in touch if you'd like to collaborate on a project or inquire more about experience.</p>
-        </div>
-
-        <form class="contact-form" id="contactForm">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="from_name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="from_email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required placeholder="Tell me about your project or how I can help you..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-    // Initialize EmailJS with your Public Key
-    (function(){
-        emailjs.init("Q0ETI2Cxz-CUFHyOb"); 
-    })();
-</script>
-
-    <footer>
+    <!-- ═══════════════════════════════════════════
+         EDUCATION
+    ═══════════════════════════════════════════ -->
+    <section id="education" class="education-section">
         <div class="container">
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/ankhitsharma/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/TechCabana" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://stackoverflow.com/users/4656324/techcabana" aria-label="Stack Overflow"><i class="fab fa-stack-overflow"></i></a>
-            </div>
-            <p>&copy; TechCabana. All rights reserved.</p>
-        </div>
-    </footer>
+            <div class="sec-eyebrow fade-up">Education</div>
+            <h2 class="sec-heading fade-up">Academic Background</h2>
 
+            <div class="education-grid">
+
+                <div class="edu-card fade-up">
+                    <div class="edu-card-left">
+                        <div class="edu-degree-initial">MSc</div>
+                    </div>
+                    <div class="edu-card-right">
+                        <div class="edu-degree">Business Intelligence & Analytics</div>
+                        <div class="edu-institution">University of Westminster</div>
+                        <div class="edu-date">Sep 2016 — Sep 2019</div>
+                    </div>
+                </div>
+
+                <div class="edu-card fade-up" style="--delay: 80ms">
+                    <div class="edu-card-left">
+                        <div class="edu-degree-initial">BSc</div>
+                    </div>
+                    <div class="edu-card-right">
+                        <div class="edu-degree">Computer Science</div>
+                        <div class="edu-institution">City University London</div>
+                        <div class="edu-date">Sep 2011 — Jul 2015</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="certs-block fade-up">
+                <div class="certs-label">Certifications & Achievements</div>
+                <div class="certs-list">
+                    <span class="cert-pill">AWS Cloud Practitioner</span>
+                    <span class="cert-pill">Systems Operations on AWS — QA</span>
+                    <span class="cert-pill">Data Warehouse Concepts — Coursera</span>
+                    <span class="cert-pill">Database Management Essentials — Coursera</span>
+                    <span class="cert-pill">Pentaho DI Fundamentals — Hitachi</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════ -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="sec-eyebrow fade-up">Contact</div>
+
+            <h2 class="contact-statement fade-up">
+                Got an opportunity that <span class="accent-text">data</span> can solve?
+            </h2>
+            <p class="contact-sub fade-up">Whether it's a new role, a collaboration, or just a conversation about data products — I'd love to hear from you.</p>
+
+            <div class="contact-grid fade-up">
+
+                <!-- Form -->
+                <div class="contact-form-wrap">
+                    <form id="contactForm">
+                        <!-- Hidden subject so EmailJS template stays intact -->
+                        <input type="hidden" name="subject" value="Portfolio Contact">
+
+                        <div class="form-field">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="from_name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="from_email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send">
+                            Send Message
+                            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Social links -->
+                <div class="contact-links-wrap">
+                    <div class="contact-links-label">Or find me on</div>
+
+                    <a class="social-link-card" href="https://www.linkedin.com/in/ankhitsharma/" target="_blank" rel="noopener">
+                        <div class="social-link-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                        </div>
+                        <div class="social-link-info">
+                            <div class="social-link-platform">LinkedIn</div>
+                            <div class="social-link-handle">in/ankhitsharma</div>
+                        </div>
+                        <svg class="social-link-arrow" width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </a>
+
+                    <a class="social-link-card" href="https://github.com/TechCabana" target="_blank" rel="noopener">
+                        <div class="social-link-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                        </div>
+                        <div class="social-link-info">
+                            <div class="social-link-platform">GitHub</div>
+                            <div class="social-link-handle">TechCabana</div>
+                        </div>
+                        <svg class="social-link-arrow" width="13" height="13" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer inside contact -->
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <span class="footer-copy">© 2025 Ankhit Sharma</span>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/ankhitsharma/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://github.com/TechCabana" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                    </a>
+                    <a href="https://stackoverflow.com/users/4656324/techcabana" target="_blank" rel="noopener" aria-label="Stack Overflow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.986 21.865v-6.404h2.134V24H1.844v-8.539h2.13v6.404h15.012zM6.111 19.731H16.85v-2.137H6.111v2.137zm.259-4.852l10.48 2.189.451-2.07-10.478-2.187-.453 2.068zm1.359-5.056l9.705 4.53.903-1.95-9.706-4.53-.902 1.95zm2.715-4.785l8.217 6.855 1.359-1.62-8.216-6.853-1.36 1.618zM15.751 0l-1.746 1.294 6.405 8.604 1.746-1.294L15.751 0z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         DEMO MODAL
+    ═══════════════════════════════════════════ -->
     <div id="demoModal" class="modal-overlay">
         <div class="modal-content">
-            <button class="modal-close-btn">&times;</button>
-            <iframe id="demoIframe" class="modal-iframe" frameborder="0"></iframe>
+            <button class="modal-close-btn" aria-label="Close">&times;</button>
+            <iframe id="demoIframe" class="modal-iframe" frameborder="0" title="Project Demo"></iframe>
         </div>
     </div>
+
+    <!-- ═══════════════════════════════════════════
+         SCRIPTS
+    ═══════════════════════════════════════════ -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("Q0ETI2Cxz-CUFHyOb");
+        })();
+    </script>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        /* particles.js config */
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 90, density: { enable: true, value_area: 800 } },
+                color: { value: '#06b6d4' },
+                shape: { type: 'circle' },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: { enable: true, speed: 0.6, opacity_min: 0.15, sync: false }
                 },
-                "color": {
-                    //"value": ["#001524", "#FFECD1"] // Combination of darkest and lightest colors
-                     "value": ["#6366f1", "#8b5cf6", "#ec4899"] // Indigo, Purple, Pink
+                size: {
+                    value: 2.5,
+                    random: true,
+                    anim: { enable: false }
                 },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    },
-                    "image": {
-                        "src": "img/github.svg",
-                        "width": 100,
-                        "height": 100
-                    }
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#06b6d4',
+                    opacity: 0.2,
+                    width: 1
                 },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#FFECD1", // Lightest color for lines
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
+                move: {
+                    enable: true,
+                    speed: 0.6,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
                 }
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab" // Tech-savvy grab effect
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push" // Add more particles on click
-                    },
-                    "resize": true
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'grab' },
+                    onclick: { enable: false },
+                    resize: true
                 },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
+                modes: {
+                    grab: { distance: 160, line_linked: { opacity: 0.4 } }
                 }
             },
-            "retina_detect": true
+            retina_detect: true
         });
     </script>
+
     <script src="assets/js/main.js"></script>
+
 </body>
 </html>

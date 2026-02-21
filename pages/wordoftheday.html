@@ -3,119 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word of the Day Demo</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Link to main CSS file -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Word of the Day — Ankhit Sharma</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /* Only page-specific overrides */
+        /* ── Page-specific layout overrides ── */
         body {
-            padding-top: 4rem;
+            padding-top: 0;
         }
-        
-        .page-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            color: var(--lightest);
+
+        .demo-page {
+            min-height: 100vh;
+            background: var(--bg);
+            padding: 56px 0 72px;
         }
-        
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--body);
+            margin-bottom: 40px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .back-link svg {
+            transition: transform 0.2s ease;
+        }
+
+        .back-link:hover svg {
+            transform: translateX(-3px);
+        }
+
+        /* Page header */
+        .demo-page-eyebrow {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .demo-page-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 800;
+            font-size: clamp(36px, 5vw, 56px);
+            letter-spacing: -0.03em;
+            color: var(--head);
+            line-height: 1.0;
+            margin-bottom: 40px;
+        }
+
+        /* Tags */
+        .demo-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .demo-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            padding: 4px 10px;
+            border-radius: 5px;
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-border);
+            color: var(--accent);
+        }
+
+        /* Write-up card */
         .write-up-card {
-            background: var(--surface);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-lg);
+            background: var(--surf);
             border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 40px;
+            margin-bottom: 16px;
         }
-        
-        .write-up-card .project-content {
-            text-align: left;
+
+        .write-up-heading {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: -0.02em;
+            color: var(--head);
+            margin-bottom: 28px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--border);
         }
-        
-        .write-up-card .project-title {
-            font-size: 1.3rem;
+
+        .write-up-section {
+            margin-bottom: 32px;
+        }
+
+        .write-up-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .write-up-section h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .write-up-section p {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--body);
+            margin: 0;
+        }
+
+        /* Screenshot card */
+        .screenshot-card {
+            background: var(--surf);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 32px;
+            margin: 16px 0;
+        }
+
+        .screenshot-card-label {
+            font-size: 10px;
             font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--lightest);
-            text-align: center;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 16px;
         }
-        
-        .write-up-card h3 {
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-            font-family: 'Source Sans Pro', sans-serif;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-        
-        .write-up-card p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-            color: var(--text-primary);
-            text-align: left;
-        }
-        
-        .screenshot-container {
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .project-screenshot {
-            width: 1200px;
-            height: 600px;
-            max-width: 100%;
-            object-fit: contain;
-            border-radius: 8px;
-            border: 2px solid var(--border);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            background-color: #1a1a1a;
+
+        .screenshot-img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
             display: block;
             margin: 0 auto;
+            border-radius: 10px;
+            border: 1px solid var(--border);
         }
-        
-        .screenshot-container .screenshot-caption {
-            margin-top: 0.8rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+
+        .screenshot-caption {
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--muted);
+            text-align: center;
+            margin-top: 12px;
             font-style: italic;
-            text-align: center !important;
-            display: block;
-            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="page-title">Word of the Day</h1>
+    <div class="demo-page">
+        <div class="container">
 
-        <div class="write-up-card">
-            <div class="project-content">
-                <h2 class="project-title">Project Deep Dive</h2>
-                
-                <h3>Purpose & Motivation</h3>
-                <p>This project started with a pretty straightforward goal: I wanted to learn new words without having to remember to check a website or download another app that would clutter my phone. The solution? A simple Python script that grabs the word of the day from Wordnik and shoots it straight to my phone via SMS using Twilio. It's low-cost, lightweight, and once you set it up, it just works in the background—no daily effort required.</p>
-                
-                <div class="screenshot-container">
-                    <img src="../assets/images/wordoftheday_sms.PNG" alt="Word of the Day SMS Screenshot" class="project-screenshot">
-                    <p class="screenshot-caption">Daily word delivery via SMS</p>
-                </div>
-                
-                <h3>Implementation & Technical Considerations</h3>
-                <p>Getting this working was all about making sure it was reliable and easy to debug. The script pulls data from Wordnik's API, formats it into a text-friendly message, and sends it through Twilio. But here's the thing—I knew I'd need to troubleshoot eventually, so I built in comprehensive logging from the start. Every time the script runs, it logs whether it succeeded or failed, what the APIs returned, and whether the SMS actually went through. This way, if something breaks—maybe I hit an API limit or there's a network hiccup—I can check the logs and know exactly what went wrong. It's basically like having a paper trail that tells you the full story every single day.</p>
-                
-                <div class="screenshot-container">
-                    <img src="../assets/images/Logging_WordOfTheDay.png" alt="Script Execution Log Screenshot" class="project-screenshot">
-                    <p class="screenshot-caption">Execution logs showing successful API calls and message delivery</p>
-                </div>
-                
-                <h3>Flexibility & Scheduling Options</h3>
-                <p>One of my favorite parts about this project is how flexible it is. You can set it up with Windows Task Scheduler to run automatically every morning at whatever time works for you, or just fire it up manually from VS Code when you feel like testing it out. The whole setup is pretty minimal—you just need API keys from Wordnik and Twilio, plus your phone number, and you're good to go. It's also incredibly cheap to run since Twilio's free tier handles way more than one message per day, and Wordnik's API limits are generous. At the end of the day, it's a small, focused tool that does exactly what it needs to do without any unnecessary complexity.</p>
+            <a class="back-link" href="../index.html#projects">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 6H2M2 6L6 2M2 6L6 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Back to Portfolio
+            </a>
+
+            <div class="demo-page-eyebrow">Project Deep Dive</div>
+            <h1 class="demo-page-title">Word of the Day</h1>
+
+            <div class="demo-tags">
+                <span class="demo-tag">Python</span>
+                <span class="demo-tag">Twilio API</span>
+                <span class="demo-tag">Wordnik API</span>
+                <span class="demo-tag">Task Scheduler</span>
+                <span class="demo-tag">SMS Automation</span>
             </div>
+
+            <!-- Write-up -->
+            <div class="write-up-card">
+                <div class="write-up-heading">About This Project</div>
+
+                <div class="write-up-section">
+                    <h3>Purpose & Motivation</h3>
+                    <p>This project started with a pretty straightforward goal: I wanted to learn new words without having to remember to check a website or download another app that would clutter my phone. The solution? A simple Python script that grabs the word of the day from Wordnik and shoots it straight to my phone via SMS using Twilio. It's low-cost, lightweight, and once you set it up, it just works in the background — no daily effort required.</p>
+                </div>
+            </div>
+
+            <!-- Screenshot 1 -->
+            <div class="screenshot-card">
+                <div class="screenshot-card-label">Daily SMS delivery</div>
+                <img
+                    class="screenshot-img"
+                    src="../assets/images/wordoftheday_sms.PNG"
+                    alt="Word of the Day SMS Screenshot"
+                    loading="lazy"
+                >
+                <p class="screenshot-caption">Daily word with definition and example, delivered by SMS every morning</p>
+            </div>
+
+            <!-- Write-up continued -->
+            <div class="write-up-card">
+                <div class="write-up-section">
+                    <h3>Implementation & Technical Considerations</h3>
+                    <p>Getting this working was all about making sure it was reliable and easy to debug. The script pulls data from Wordnik's API, formats it into a text-friendly message, and sends it through Twilio. But here's the thing — I knew I'd need to troubleshoot eventually, so I built in comprehensive logging from the start. Every time the script runs, it logs whether it succeeded or failed, what the APIs returned, and whether the SMS actually went through. This way, if something breaks — maybe I hit an API limit or there's a network hiccup — I can check the logs and know exactly what went wrong. It's basically like having a paper trail that tells you the full story every single day.</p>
+                </div>
+            </div>
+
+            <!-- Screenshot 2 -->
+            <div class="screenshot-card">
+                <div class="screenshot-card-label">Execution logs</div>
+                <img
+                    class="screenshot-img"
+                    src="../assets/images/Logging_WordOfTheDay.png"
+                    alt="Script Execution Log Screenshot"
+                    loading="lazy"
+                >
+                <p class="screenshot-caption">Structured logs showing API calls, response codes, and delivery confirmation</p>
+            </div>
+
+            <!-- Write-up continued -->
+            <div class="write-up-card">
+                <div class="write-up-section">
+                    <h3>Flexibility & Scheduling Options</h3>
+                    <p>One of my favourite parts about this project is how flexible it is. You can set it up with Windows Task Scheduler to run automatically every morning at whatever time works for you, or just fire it up manually from VS Code when you feel like testing it out. The whole setup is pretty minimal — you just need API keys from Wordnik and Twilio, plus your phone number, and you're good to go. It's also incredibly cheap to run since Twilio's free tier handles way more than one message per day, and Wordnik's API limits are generous. At the end of the day, it's a small, focused tool that does exactly what it needs to do without any unnecessary complexity.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>

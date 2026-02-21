@@ -3,96 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Family Tree Project</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Link to main CSS file -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>The Family Tree Project — Ankhit Sharma</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /* Only page-specific overrides */
+        /* ── Page-specific layout overrides ── */
         body {
-            padding-top: 4rem;
+            padding-top: 0;
         }
-        
-        .page-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            color: var(--lightest);
+
+        .demo-page {
+            min-height: 100vh;
+            background: var(--bg);
+            padding: 56px 0 72px;
         }
-        
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--body);
+            margin-bottom: 40px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .back-link svg {
+            transition: transform 0.2s ease;
+        }
+
+        .back-link:hover svg {
+            transform: translateX(-3px);
+        }
+
+        /* Page header */
+        .demo-page-eyebrow {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .demo-page-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 800;
+            font-size: clamp(36px, 5vw, 56px);
+            letter-spacing: -0.03em;
+            color: var(--head);
+            line-height: 1.0;
+            margin-bottom: 40px;
+        }
+
+        /* Tags */
+        .demo-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .demo-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            padding: 4px 10px;
+            border-radius: 5px;
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-border);
+            color: var(--accent);
+        }
+
+        /* Write-up card */
         .write-up-card {
-            background: var(--surface);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-lg);
+            background: var(--surf);
             border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 40px;
+            margin-bottom: 16px;
         }
-        
-        .write-up-card .project-content {
-            text-align: left;
+
+        .write-up-heading {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: -0.02em;
+            color: var(--head);
+            margin-bottom: 28px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--border);
         }
-        
-        .write-up-card h3 {
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
+
+        .write-up-section {
+            margin-bottom: 32px;
         }
-        
-        .write-up-card p {
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            line-height: 1.8;
+
+        .write-up-section:last-child {
+            margin-bottom: 0;
         }
-        
-        .write-up-card .project-title {
-            color: var(--lightest);
-            text-align: center;
+
+        .write-up-section h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            color: var(--accent);
+            margin-bottom: 10px;
         }
-        
+
+        .write-up-section p {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--body);
+            margin: 0;
+        }
+
+        /* Demo embed card */
+        .demo-embed-card {
+            background: var(--surf);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 32px;
+            margin-bottom: 16px;
+        }
+
+        .demo-embed-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .demo-embed-label {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: 17px;
+            letter-spacing: -0.01em;
+            color: var(--head);
+        }
+
+        .demo-open-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            background: var(--accent-dim);
+            border: 1px solid var(--accent-border);
+            border-radius: 6px;
+            padding: 7px 14px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .demo-open-link:hover {
+            background: rgba(6, 182, 212, 0.18);
+        }
+
         .demo-iframe {
             width: 100%;
-            height: 80vh;
-            border-radius: 8px;
+            height: 78vh;
+            min-height: 520px;
+            border-radius: 10px;
             border: 1px solid var(--border);
-            margin-top: 1rem;
-            background-color: #fff;
-        }
-        
-        .demo-wrapper {
-            background: var(--surface);
-            border: 1px solid var(--border);
+            background: white;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div class="container" style="padding-top: 4rem; padding-bottom: 2rem;">
-        <h1 class="page-title">The Family Tree Project</h1>
+    <div class="demo-page">
+        <div class="container">
 
-        <div class="project-card write-up-card">
-            <div class="project-content">
-                <h2 class="project-title">Project Deep Dive</h2>
-                
-                <h3>Project Goal</h3>
-                <p>The main goal was to create something more dynamic than your typical static chart. We wanted a fully interactive canvas where you could visually build out your family history, and importantly, have it all save right in your browser. No accounts, no cloud saves—just a seamless experience where you could pick up right where you left off. The focus was really on making it a user-friendly, self-contained tool that felt both powerful and easy to manage.</p>
-                
-                <h3>Features &amp; Technical Hurdles</h3>
-                <p>We ended up packing in a pretty robust feature set. You've got all the core functionality like adding, editing, and deleting family members and their relationships, plus the interactive canvas with pan and zoom. We also built out a whole suite of filters—by tags, roles, generation, and even that new toggle for showing deceased members—and a full import/export system for everything from JSON to PNGs and CSVs. On the development side, a couple of things were pretty tricky. Keeping the UI perfectly in sync with the data was a constant focus; if you delete someone, you have to make sure not just their card vanishes, but all their connection lines do too. Speaking of those lines, getting the SVG coordinates right was a headache until we figured out the timing for the browser to render everything first. It's those little details that really test the logic.</p>
-                
-                <h3>Development Process &amp; AI Collaboration</h3>
-                <p>From a project management standpoint, using an AI for development was fascinating. The biggest takeaway was how crucial clear instructions are. You really have to be specific with your prompts, because any gray area gets interpreted, and you might not get what you envisioned. We found that breaking down the work into smaller, specific features—like "add the deceased toggle" instead of "add all the filters"—worked best. Trying to do too much at once just led to confusing or incomplete results. But honestly, the speed was the game-changer. Being able to go from an idea to a working prototype in minutes was just incredible. It made the whole process feel less like a grind and more like a really fast, creative session.</p>
-            </div>
-        </div>
+            <a class="back-link" href="../index.html#projects">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 6H2M2 6L6 2M2 6L6 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Back to Portfolio
+            </a>
 
-        <div class="project-card demo-wrapper">
-            <div class="project-content">
-                <h2 class="project-title">Live Application Demo</h2>
-                <p class="project-description">Feel free to interact with the full web-app below or navigate directly <a href="https://techcabana.github.io/TheFamilyTreeProject/index.html" target="_blank" style="color: var(--primary);">here</a>.</p>
-                <iframe class="demo-iframe" src="https://techcabana.github.io/TheFamilyTreeProject/" title="Live Demo of The Family Tree Project"></iframe>
+            <div class="demo-page-eyebrow">Project Deep Dive</div>
+            <h1 class="demo-page-title">The Family Tree Project</h1>
+
+            <div class="demo-tags">
+                <span class="demo-tag">HTML5</span>
+                <span class="demo-tag">CSS3</span>
+                <span class="demo-tag">JavaScript</span>
+                <span class="demo-tag">Canvas API</span>
+                <span class="demo-tag">SVG</span>
             </div>
+
+            <!-- Write-up -->
+            <div class="write-up-card">
+                <div class="write-up-heading">About This Project</div>
+
+                <div class="write-up-section">
+                    <h3>Project Goal</h3>
+                    <p>The main goal was to create something more dynamic than your typical static chart. We wanted a fully interactive canvas where you could visually build out your family history, and importantly, have it all save right in your browser. No accounts, no cloud saves — just a seamless experience where you could pick up right where you left off. The focus was really on making it a user-friendly, self-contained tool that felt both powerful and easy to manage.</p>
+                </div>
+
+                <div class="write-up-section">
+                    <h3>Features & Technical Hurdles</h3>
+                    <p>We ended up packing in a pretty robust feature set. You've got all the core functionality like adding, editing, and deleting family members and their relationships, plus the interactive canvas with pan and zoom. We also built out a whole suite of filters — by tags, roles, generation, and even that toggle for showing deceased members — and a full import/export system for everything from JSON to PNGs and CSVs. On the development side, a couple of things were pretty tricky. Keeping the UI perfectly in sync with the data was a constant focus; if you delete someone, you have to make sure not just their card vanishes, but all their connection lines do too. Getting the SVG coordinates right was a headache until we figured out the timing for the browser to render everything first.</p>
+                </div>
+
+                <div class="write-up-section">
+                    <h3>Development Process & AI Collaboration</h3>
+                    <p>From a project management standpoint, using an AI for development was fascinating. The biggest takeaway was how crucial clear instructions are. You really have to be specific with your prompts, because any gray area gets interpreted, and you might not get what you envisioned. We found that breaking down the work into smaller, specific features — like "add the deceased toggle" instead of "add all the filters" — worked best. Trying to do too much at once just led to confusing or incomplete results. But honestly, the speed was the game-changer. Being able to go from an idea to a working prototype in minutes was just incredible. It made the whole process feel less like a grind and more like a really fast, creative session.</p>
+                </div>
+            </div>
+
+            <!-- Live Demo -->
+            <div class="demo-embed-card">
+                <div class="demo-embed-header">
+                    <div class="demo-embed-label">Live Application Demo</div>
+                    <a class="demo-open-link" href="https://techcabana.github.io/TheFamilyTreeProject/" target="_blank" rel="noopener">
+                        Open full screen
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </a>
+                </div>
+                <iframe
+                    class="demo-iframe"
+                    src="https://techcabana.github.io/TheFamilyTreeProject/"
+                    title="Live Demo — The Family Tree Project"
+                    frameborder="0"
+                ></iframe>
+            </div>
+
         </div>
     </div>
 </body>
