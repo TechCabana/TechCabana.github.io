@@ -1001,12 +1001,12 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
 }
 
-/* Below the full container width four columns get too narrow — drop to 2x2
-   rather than leaving an orphan card on its own row */
+/* Below the full container width three columns get too narrow — drop to 2
+   rather than leaving cards cramped */
 @media (max-width: 1150px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
